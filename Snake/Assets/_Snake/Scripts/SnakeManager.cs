@@ -9,27 +9,18 @@ public class SnakeManager : MonoBehaviour
 
     [SerializeField] List<GameObject> _bodyPrefabs = new List<GameObject>();
 
-    private List<GameObject> _snakePart = new List<GameObject>();
+    private List<SnakePart> _snakePart = new List<SnakePart>();
     private float _distanceCount;
 
     private Rigidbody2D _headRB;
     private float currentInputAngle;
 
+    #region LC
     private void Start() 
     {
-        GameObject head = Instantiate(_bodyPrefabs[0], transform.position, transform.rotation, this.transform);  
+        GameObject head = Instantiate(_bodyPrefabs[0], transform.position, transform.rotation, this.transform);
 
-        if(head.GetComponent<SnakePart>() == null)
-        {
-            head.AddComponent<SnakePart>();
-        }
-        if(head.GetComponent<Rigidbody2D>() == null)
-        {
-            head.AddComponent<Rigidbody2D>();
-            head.GetComponent<Rigidbody2D>().gravityScale = 0;
-        }
-
-        _snakePart.Add(head);  
+        _snakePart.Add(head.GetComponent<SnakePart>());  
         _bodyPrefabs.RemoveAt(0);
 
         _headRB = _snakePart[0].GetComponent<Rigidbody2D>();
@@ -50,6 +41,7 @@ public class SnakeManager : MonoBehaviour
     {
         FollowHead();
     }
+    #endregion
 
     #region Head
     private void MoveSnake()
@@ -76,17 +68,19 @@ public class SnakeManager : MonoBehaviour
     {
         if(_snakePart.Count > 1)
         {
+            // act as last part history Transform then remove
             for(int i = 1; i < _snakePart.Count; i++)
             {
-                SnakePart snakePart = _snakePart[i - 1].GetComponent<SnakePart>();
-                _snakePart[i].transform.position = snakePart.SnakeParts[0].Position;
-                _snakePart[i].transform.rotation = snakePart.SnakeParts[0].Rotation;
+                SnakePart lastPart = _snakePart[i - 1];
+                _snakePart[i].transform.position = lastPart.SnakeParts[0].Position;
+                _snakePart[i].transform.rotation = lastPart.SnakeParts[0].Rotation;
 
-                snakePart.SnakeParts.RemoveAt(0);
+                lastPart.SnakeParts.RemoveAt(0);
             }
         }
-    }
 
+        _snakePart[_snakePart.Count - 1].ClearHistoryInfo(); // remove final part history info
+    }
 
     private void CreateBody()
     {
@@ -94,7 +88,7 @@ public class SnakeManager : MonoBehaviour
 
         if(_distanceCount == 0)
         {
-            snakePart.ClearPartList();
+            snakePart.ClearHistoryInfo();
         }
 
         _distanceCount += Time.deltaTime;
@@ -103,20 +97,10 @@ public class SnakeManager : MonoBehaviour
         {
             GameObject body = Instantiate(_bodyPrefabs[0], snakePart.SnakeParts[0].Position, snakePart.SnakeParts[0].Rotation, this.transform);  
 
-            if(body.GetComponent<SnakePart>() == null)
-            {
-                body.AddComponent<SnakePart>();
-            }
-            if(body.GetComponent<Rigidbody2D>() == null)
-            {
-                body.AddComponent<Rigidbody2D>();
-                body.GetComponent<Rigidbody2D>().gravityScale = 0;
-            }
-
-            _snakePart.Add(body);
+            _snakePart.Add(body.GetComponent<SnakePart>());
             // _bodyPrefabs.RemoveAt(0);
 
-            body.GetComponent<SnakePart>().ClearPartList();
+            body.GetComponent<SnakePart>().ClearHistoryInfo();
 
             _distanceCount = 0f;
         }

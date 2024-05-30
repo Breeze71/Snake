@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class SnakePart : MonoBehaviour
 {
+    // store all history Transform
     public List<SnakePartInfo> SnakeParts = new List<SnakePartInfo>();
 
     private void FixedUpdate() 
     {
-        UpdateSnakePart();
+        StoreHistoryInfo();
     }
 
-    public void UpdateSnakePart()
+    public void StoreHistoryInfo()
     {
         SnakeParts.Add(new SnakePartInfo(transform.position, transform.rotation));
     }
 
-    public void ClearPartList()
+    public void ClearHistoryInfo()
     {
         SnakeParts.Clear();
         SnakeParts.Add(new SnakePartInfo(transform.position, transform.rotation));
