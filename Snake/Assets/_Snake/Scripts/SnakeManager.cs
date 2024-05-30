@@ -37,7 +37,7 @@ public class SnakeManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(_snakePart.Count > 0)
+        if(_snakePart.Count > 0 && _snakePart.Count < 5)
         {
             CreateBody();
         }
@@ -51,10 +51,26 @@ public class SnakeManager : MonoBehaviour
         FollowHead();
     }
 
+    #region Head
     private void MoveSnake()
     {
         _headRB.velocity = _snakePart[0].transform.right * _snakeSO.Speed * Time.deltaTime;
     }
+    private void RotateSnake()
+    {
+        // float horizontalInput = Input.GetAxisRaw("Horizontal");
+        // if(horizontalInput != 0)
+        // {
+        //     _snakePart[0].transform.Rotate(new Vector3(0, 0, - _snakeSO.RotationSpeed * Time.deltaTime * horizontalInput));
+        // }
+        
+        if(_snakeSO.HandleMoveDirection() != Vector2.zero)
+        {
+            currentInputAngle = _snakeSO.GetAngleFromVector(_snakeSO.HandleMoveDirection());
+        }
+        _snakePart[0].transform.eulerAngles = new Vector3(0, 0, currentInputAngle);
+    }
+    #endregion
 
     private void FollowHead()
     {
@@ -71,20 +87,6 @@ public class SnakeManager : MonoBehaviour
         }
     }
 
-    private void RotateSnake()
-    {
-        // float horizontalInput = Input.GetAxisRaw("Horizontal");
-        // if(horizontalInput != 0)
-        // {
-        //     _snakePart[0].transform.Rotate(new Vector3(0, 0, - _snakeSO.RotationSpeed * Time.deltaTime * horizontalInput));
-        // }
-        
-        if(_snakeSO.HandleMoveDirection() != Vector2.zero)
-        {
-            currentInputAngle = _snakeSO.GetAngleFromVector(_snakeSO.HandleMoveDirection());
-        }
-        _snakePart[0].transform.eulerAngles = new Vector3(0, 0, currentInputAngle);
-    }
 
     private void CreateBody()
     {

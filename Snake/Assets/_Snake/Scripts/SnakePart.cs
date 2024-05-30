@@ -6,7 +6,12 @@ public class SnakePart : MonoBehaviour
 {
     public List<SnakePartInfo> SnakeParts = new List<SnakePartInfo>();
 
-    public void AddSnakePart()
+    private void FixedUpdate() 
+    {
+        UpdateSnakePart();
+    }
+
+    public void UpdateSnakePart()
     {
         SnakeParts.Add(new SnakePartInfo(transform.position, transform.rotation));
     }
