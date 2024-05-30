@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class SnakePart : MonoBehaviour
 {
-    public List<SnakePartInfo> snakeParts = new List<SnakePartInfo>();
+    public List<SnakePartInfo> SnakeParts = new List<SnakePartInfo>();
 
     public void AddSnakePart()
     {
-        snakeParts.Add(new SnakePartInfo(transform.position, transform.rotation));
+        SnakeParts.Add(new SnakePartInfo(transform.position, transform.rotation));
+    }
+
+    public void ClearPartList()
+    {
+        SnakeParts.Clear();
+        SnakeParts.Add(new SnakePartInfo(transform.position, transform.rotation));
     }
 }
