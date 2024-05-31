@@ -10,7 +10,7 @@ public class SnakeManager : MonoBehaviour
     [SerializeField] List<GameObject> _bodyPrefabs = new List<GameObject>();
 
     private List<SnakePart> _snakePart = new List<SnakePart>();
-    private float _distanceCount;
+    private float _distanceCount = 0f;
 
     private Rigidbody2D _headRB;
     private float currentInputAngle;
@@ -21,17 +21,12 @@ public class SnakeManager : MonoBehaviour
         GameObject head = Instantiate(_bodyPrefabs[0], transform.position, transform.rotation, this.transform);
 
         _snakePart.Add(head.GetComponent<SnakePart>());  
-        _bodyPrefabs.RemoveAt(0);
 
-        _headRB = _snakePart[0].GetComponent<Rigidbody2D>();
+        _headRB = head.GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
-        if(_snakePart.Count > 0 && _snakePart.Count < 5)
-        {
-            CreateBody();
-        }
 
         MoveSnake();    
         RotateSnake();
@@ -39,6 +34,10 @@ public class SnakeManager : MonoBehaviour
 
     private void Update() 
     {
+        if(_snakePart.Count > 0 && _snakePart.Count < 5)
+        {
+            CreateBody();
+        }
         FollowHead();
     }
     #endregion
@@ -46,7 +45,7 @@ public class SnakeManager : MonoBehaviour
     #region Head
     private void MoveSnake()
     {
-        _headRB.velocity = _snakePart[0].transform.right * _snakeSO.Speed * Time.deltaTime;
+        _headRB.velocity = _snakePart[0].transform.right * _snakeSO.Speed;
     }
     private void RotateSnake()
     {
@@ -79,7 +78,7 @@ public class SnakeManager : MonoBehaviour
             }
         }
 
-        _snakePart[_snakePart.Count - 1].ClearHistoryInfo(); // remove final part history info
+        // _snakePart[_snakePart.Count - 1].ClearHistoryInfo(); // remove final part history info
     }
 
     private void CreateBody()
@@ -95,7 +94,7 @@ public class SnakeManager : MonoBehaviour
 
         if(_distanceCount >= _snakeSO.Distance)
         {
-            GameObject body = Instantiate(_bodyPrefabs[0], snakePart.SnakeParts[0].Position, snakePart.SnakeParts[0].Rotation, this.transform);  
+            GameObject body = Instantiate(_bodyPrefabs[1], snakePart.SnakeParts[0].Position, snakePart.SnakeParts[0].Rotation, this.transform);  
 
             _snakePart.Add(body.GetComponent<SnakePart>());
             // _bodyPrefabs.RemoveAt(0);
