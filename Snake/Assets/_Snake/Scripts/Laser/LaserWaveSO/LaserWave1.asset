@@ -12,14 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788633101efd55546a7ed1a3999f616b, type: 3}
   m_Name: LaserWave1
   m_EditorClassIdentifier: 
-  _spawnCountDown: 3
-  _laserInfos:
-  - LaserPrefab: {fileID: 0}
-    StartPoint: {x: 0, y: 0}
-    EndPoint: {x: 0, y: 0}
-  - LaserPrefab: {fileID: 0}
-    StartPoint: {x: 0, y: 0}
-    EndPoint: {x: 0, y: 0}
-  - LaserPrefab: {fileID: 0}
-    StartPoint: {x: 0, y: 0}
-    EndPoint: {x: 0, y: 0}
+  _spawnCountDown: 1
+  LaserInfos:
+  - {fileID: 11400000, guid: 318cb7518770ddf45a1b1a22af3a485a, type: 2}
+  - {fileID: 11400000, guid: 55778c2c4f61a9a49af51c43e651fdc1, type: 2}

@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Laser
+  m_Name: LaserRed
   m_Shader: {fileID: -6465566751694194690, guid: ca7a381225ac29d4ab5c87c3afd569b6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -54,6 +54,6 @@ Material:
     - _LaserSacle: 5
     - _LaserThick: 30.16
     m_Colors:
-    - _Color: {r: 1.3755788, g: 3.0149658, b: 12.679245, a: 1}
+    - _Color: {r: 12.679247, g: 1.8404894, b: 1.3940531, a: 1}
     - _LaserSpeed: {r: -0.5, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

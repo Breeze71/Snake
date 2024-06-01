@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -7,18 +8,25 @@ namespace V
 {
 public class LaserSpawner : MonoBehaviour
 {
-    [SerializeField] private bool _isEditMode;
-    
-    [Expandable] [ReorderableList]
+    public static LaserSpawner I {private set; get;}
+
+    [Expandable]
     [SerializeField] private LaserWaveSO[] _laserWaves;
     
     private ObjectPool<LaserController> _laserPool;
-    private GameObject currentSpawnPrefab;
+    [SerializeField] private GameObject currentSpawnPrefab;
     private Coroutine _laserEnableCoroutine;
 
     #region LC
     private void Awake() 
     {
+        if(I != null)
+        {
+            Debug.LogError("More than one Instance");
+            Destroy(this);
+        }
+        I = this;
+
         _laserPool = new ObjectPool<LaserController>(CreatePool);    
     }
 
@@ -27,37 +35,36 @@ public class LaserSpawner : MonoBehaviour
         if(_laserEnableCoroutine != null)
         {
             _laserEnableCoroutine = null;
-            _laserEnableCoroutine = StartCoroutine(Coroutine_EnableLaser());
+            _laserEnableCoroutine = StartCoroutine(Coroutine_StartLaserWave());
         }
 
-        _laserEnableCoroutine = StartCoroutine(Coroutine_EnableLaser());
+        _laserEnableCoroutine = StartCoroutine(Coroutine_StartLaserWave());
     
     }
 
     private void Update() 
     {
 #if UNITY_EDITOR
-        EditLaserMode();
+        if(_lasers != null && _laserInfoSOs != null)
+        {
+            UpdateLaserPosition();
+        }
 #endif
     }
     #endregion
 
-    private IEnumerator Coroutine_EnableLaser()
+    private IEnumerator Coroutine_StartLaserWave()
     {
-        for(int i = 0; i < _laserWaves.Length; i++)
+        for(int laserWaveIndex = 0; laserWaveIndex < _laserWaves.Length; laserWaveIndex++)
         {
-            yield return new WaitForSeconds(_laserWaves[i]._spawnCountDown);
-            
-            currentSpawnPrefab = _laserWaves[i].LaserPrefab;
+            yield return new WaitForSeconds(_laserWaves[laserWaveIndex]._spawnCountDown);
 
-            
-            LaserController newLaser = GetLaserFromPool();
-            // _laserWaves[i].EnableLaser();
+            List<LaserController> newLasers = GetLaserFromPool(_laserWaves[laserWaveIndex].LaserInfos.Length, laserWaveIndex);
         }
     }
 
     #region Object Pool
-    public LaserController CreatePool()
+    private LaserController CreatePool()
     {
         GameObject newLaserGO = Instantiate(currentSpawnPrefab, transform);
         LaserController laser = newLaserGO.GetComponent<LaserController>();
@@ -71,22 +78,69 @@ public class LaserSpawner : MonoBehaviour
 
         return newLaser;
     }
-    private void ReleaseTrail(LaserController laser)
+    private List<LaserController> GetLaserFromPool(int waveLaserAmount, int waveIndex)
+    {
+        List<LaserController> lasers = new List<LaserController>();
+        for(int laserIndex = 0; laserIndex < waveLaserAmount; laserIndex++)
+        {
+            lasers.Add(_laserPool.Get());
+
+            lasers[laserIndex].gameObject.SetActive(true);
+            
+            SetUpLaser(lasers[laserIndex], laserIndex, waveIndex);
+        }
+
+        return lasers;        
+    }
+    private LaserController SetUpLaser(LaserController laser, int laserIndex, int waveIndex)
+    {
+        laser.MoveStartPoint(_laserWaves[waveIndex].LaserInfos[laserIndex].StartPoint);
+        laser.MoveEndPoint(_laserWaves[waveIndex].LaserInfos[laserIndex].EndPoint);  
+
+        return laser;
+    }
+    private void ReleaseLaser(LaserController laser)
     {
         laser.gameObject.SetActive(false);
         _laserPool.Release(laser);
     }
-    #endregion
-
-#if UNITY_EDITOR
-    private void EditLaserMode()
+    private void ReleaseLaser(LaserController[] lasers)
     {
-        if(!_isEditMode) return;
-
-        foreach(LaserWaveSO laser in _laserWaves)
+        for(int i = 0; i < lasers.Length; i++)
         {
-            // laser.EditLaserPosition();
-        }          
+            lasers[i].gameObject.SetActive(false);
+            _laserPool.Release(lasers[i]);
+        }
+    }    
+    #endregion
+    
+#if UNITY_EDITOR
+    private List<LaserController> _lasers;
+    private LaserInfoSO[] _laserInfoSOs;
+    public void SpawnWave(LaserInfoSO[] laserInfos)
+    {
+        List<LaserController> lasers = new List<LaserController>();
+        for(int laserIndex = 0; laserIndex < laserInfos.Length; laserIndex++)
+        {
+            lasers.Add(_laserPool.Get());
+
+            lasers[laserIndex].gameObject.SetActive(true);
+            
+            lasers[laserIndex].MoveStartPoint(laserInfos[laserIndex].StartPoint);
+            lasers[laserIndex].MoveEndPoint(laserInfos[laserIndex].EndPoint);  
+        }
+
+        _lasers = lasers;
+        _laserInfoSOs = laserInfos;
+    }
+
+    private void UpdateLaserPosition()
+    {
+        for(int laserIndex = 0; laserIndex < _laserInfoSOs.Length; laserIndex++)
+        {
+            _lasers[laserIndex].MoveStartPoint(_laserInfoSOs[laserIndex].StartPoint);
+            _lasers[laserIndex].MoveEndPoint(_laserInfoSOs[laserIndex].EndPoint);  
+        }
     }
 #endif
 }

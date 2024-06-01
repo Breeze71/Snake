@@ -22,8 +22,6 @@ public class LaserController : MonoBehaviour
     private void Start() 
     {
         SetupParticleList();
-        DisableLaser();
-        EnableLaser();
     }
 
     private void Update() 
@@ -31,26 +29,6 @@ public class LaserController : MonoBehaviour
         UpdateLaser();
     }
     #endregion
-
-    public void EnableLaser()
-    {
-        _lineRenderer.enabled = true;
-        
-        for(int i = 0 ; i < particles.Count ; i++)
-        {
-            particles[i].Play();
-        }
-    }
-
-    public void DisableLaser()
-    {
-        _lineRenderer.enabled = false;
-
-        for(int i = 0 ; i < particles.Count ; i++)
-        {
-            particles[i].Stop();
-        }
-    }    
 
     public void MoveStartPoint(Vector2 startPos)
     {   
