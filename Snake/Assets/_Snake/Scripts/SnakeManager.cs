@@ -27,9 +27,9 @@ public class SnakeManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         MoveSnake();    
         RotateSnake();
+        FollowHead();
     }
 
     private void Update() 
@@ -38,7 +38,6 @@ public class SnakeManager : MonoBehaviour
         {
             CreateBody();
         }
-        FollowHead();
     }
     #endregion
 
