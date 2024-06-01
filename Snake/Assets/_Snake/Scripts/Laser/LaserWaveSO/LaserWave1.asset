@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788633101efd55546a7ed1a3999f616b, type: 3}
+  m_Name: LaserWave1
+  m_EditorClassIdentifier: 
+  _spawnCountDown: 3
+  _laserInfos:
+  - LaserPrefab: {fileID: 0}
+    StartPoint: {x: 0, y: 0}
+    EndPoint: {x: 0, y: 0}
+  - LaserPrefab: {fileID: 0}
+    StartPoint: {x: 0, y: 0}
+    EndPoint: {x: 0, y: 0}
+  - LaserPrefab: {fileID: 0}
+    StartPoint: {x: 0, y: 0}
+    EndPoint: {x: 0, y: 0}

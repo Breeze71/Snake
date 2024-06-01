@@ -5,9 +5,9 @@ using UnityEngine;
 public class LaserController : MonoBehaviour
 {
     [Header("Laser")]
+    public Transform _startPoint;
+    public Transform _endPoint;
     [SerializeField] private LineRenderer _lineRenderer;
-    [SerializeField] private Transform _firePoint;
-    [SerializeField] private Transform _endLaser;
     [SerializeField] private LayerMask _laserHitLayer;
 
     private Quaternion rotation;
@@ -52,14 +52,24 @@ public class LaserController : MonoBehaviour
         }
     }    
 
+    public void MoveStartPoint(Vector2 startPos)
+    {   
+        _startPoint.position = startPos;
+    }
+
+    public void MoveEndPoint(Vector2 endPos)
+    {
+        _endPoint.position = endPos;
+    }
+
     private void UpdateLaser()
     {
-        _lineRenderer.SetPosition(0 , _firePoint.position);
-        _startVFX.transform.position = _firePoint.position;   
-        Vector2 endPoint = _endLaser.transform.position;
+        _lineRenderer.SetPosition(0 , _startPoint.position);
+        _startVFX.transform.position = _startPoint.position;   
+        Vector2 endPoint = _endPoint.transform.position;
 
-        Vector2 direction = endPoint - (Vector2)_firePoint.position;
-        RaycastHit2D hitPos = Physics2D.Raycast(_firePoint.position , direction.normalized , direction.magnitude, _laserHitLayer);
+        Vector2 direction = endPoint - (Vector2)_startPoint.position;
+        RaycastHit2D hitPos = Physics2D.Raycast(_startPoint.position , direction.normalized , direction.magnitude, _laserHitLayer);
 
         if(hitPos)
         {
@@ -71,18 +81,6 @@ public class LaserController : MonoBehaviour
         }
 
         _endVFX.transform.position = _lineRenderer.GetPosition(1);      
-
-        // RotateLaser(hitPos.point);  
-    }
-
-    private void RotateLaser(Vector2 hitPos)
-    {
-        Vector2 direction = (hitPos - (Vector2)transform.position).normalized;
-
-        float angle = Mathf.Atan2(direction.y , direction.x) * Mathf.Rad2Deg;
-        
-        rotation.eulerAngles = new Vector3(0 , 0 , angle);
-        transform.rotation = rotation;        
     }
 
     private void SetupParticleList()
