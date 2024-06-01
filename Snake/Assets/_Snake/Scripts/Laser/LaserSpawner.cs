@@ -11,8 +11,9 @@ public class LaserSpawner : MonoBehaviour
     
     [Expandable] [ReorderableList]
     [SerializeField] private LaserWaveSO[] _laserWaves;
-
+    
     private ObjectPool<LaserController> _laserPool;
+    private GameObject currentSpawnPrefab;
     private Coroutine _laserEnableCoroutine;
 
     #region LC
@@ -47,15 +48,18 @@ public class LaserSpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(_laserWaves[i]._spawnCountDown);
             
+            currentSpawnPrefab = _laserWaves[i].LaserPrefab;
+
+            
             LaserController newLaser = GetLaserFromPool();
-            _laserWaves[i].EnableLaser();
+            // _laserWaves[i].EnableLaser();
         }
     }
 
     #region Object Pool
     public LaserController CreatePool()
     {
-        GameObject newLaserGO = Instantiate(_laserWaves[0]._laserInfos[0].LaserPrefab);
+        GameObject newLaserGO = Instantiate(currentSpawnPrefab, transform);
         LaserController laser = newLaserGO.GetComponent<LaserController>();
 
         return laser;
@@ -81,7 +85,7 @@ public class LaserSpawner : MonoBehaviour
 
         foreach(LaserWaveSO laser in _laserWaves)
         {
-            laser.EditLaserPosition();
+            // laser.EditLaserPosition();
         }          
     }
 #endif
