@@ -24,8 +24,6 @@ public class LaserController : MonoBehaviour
         SetupParticleList();
         DisableLaser();
         EnableLaser();
-
-        SetupLaser();
     }
 
     private void Update() 
@@ -56,11 +54,12 @@ public class LaserController : MonoBehaviour
 
     private void UpdateLaser()
     {
+        _lineRenderer.SetPosition(0 , _firePoint.position);
         _startVFX.transform.position = _firePoint.position;   
         Vector2 endPoint = _endLaser.transform.position;
 
-        Vector2 direction = endPoint - (Vector2)transform.position;
-        RaycastHit2D hitPos = Physics2D.Raycast(transform.position , direction.normalized , direction.magnitude, _laserHitLayer);
+        Vector2 direction = endPoint - (Vector2)_firePoint.position;
+        RaycastHit2D hitPos = Physics2D.Raycast(_firePoint.position , direction.normalized , direction.magnitude, _laserHitLayer);
 
         if(hitPos)
         {
@@ -84,11 +83,6 @@ public class LaserController : MonoBehaviour
         
         rotation.eulerAngles = new Vector3(0 , 0 , angle);
         transform.rotation = rotation;        
-    }
-
-    private void SetupLaser()
-    {
-        _lineRenderer.SetPosition(0 , _firePoint.position);
     }
 
     private void SetupParticleList()
