@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04cd09fbf49a9d4aab6dc528d76e6d7, type: 3}
   m_Name: Laser1
   m_EditorClassIdentifier: 
-  StartPoint: {x: 6, y: 6}
-  EndPoint: {x: 2, y: 3}
+  StartPoint: {x: 1.11, y: -1.89}
+  EndPoint: {x: -2.76, y: 2.31}

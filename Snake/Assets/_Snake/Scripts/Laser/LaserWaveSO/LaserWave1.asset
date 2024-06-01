@@ -16,3 +16,4 @@ MonoBehaviour:
   LaserInfos:
   - {fileID: 11400000, guid: 318cb7518770ddf45a1b1a22af3a485a, type: 2}
   - {fileID: 11400000, guid: 55778c2c4f61a9a49af51c43e651fdc1, type: 2}
+  - {fileID: 11400000, guid: be11f41d90dc3514e8bf4a6d10c96c75, type: 2}

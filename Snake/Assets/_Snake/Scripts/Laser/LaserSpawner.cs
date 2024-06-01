@@ -10,11 +10,11 @@ public class LaserSpawner : MonoBehaviour
 {
     public static LaserSpawner I {private set; get;}
 
+    [SerializeField] private GameObject LaserPrefab;
     [Expandable]
     [SerializeField] private LaserWaveSO[] _laserWaves;
     
     private ObjectPool<LaserController> _laserPool;
-    [SerializeField] private GameObject currentSpawnPrefab;
     private Coroutine _laserEnableCoroutine;
 
     #region LC
@@ -66,7 +66,7 @@ public class LaserSpawner : MonoBehaviour
     #region Object Pool
     private LaserController CreatePool()
     {
-        GameObject newLaserGO = Instantiate(currentSpawnPrefab, transform);
+        GameObject newLaserGO = Instantiate(LaserPrefab, transform);
         LaserController laser = newLaserGO.GetComponent<LaserController>();
 
         return laser;
@@ -104,9 +104,9 @@ public class LaserSpawner : MonoBehaviour
         laser.gameObject.SetActive(false);
         _laserPool.Release(laser);
     }
-    private void ReleaseLaser(LaserController[] lasers)
+    private void ReleaseLaser(List<LaserController> lasers)
     {
-        for(int i = 0; i < lasers.Length; i++)
+        for(int i = 0; i < lasers.Count; i++)
         {
             lasers[i].gameObject.SetActive(false);
             _laserPool.Release(lasers[i]);
@@ -115,10 +115,15 @@ public class LaserSpawner : MonoBehaviour
     #endregion
     
 #if UNITY_EDITOR
-    private List<LaserController> _lasers;
+    private List<LaserController> _lasers = new List<LaserController>();
     private LaserInfoSO[] _laserInfoSOs;
     public void SpawnWave(LaserInfoSO[] laserInfos)
     {
+        if(_lasers.Count != 0)
+        {
+            ReleaseLaser(_lasers);
+        }
+
         List<LaserController> lasers = new List<LaserController>();
         for(int laserIndex = 0; laserIndex < laserInfos.Length; laserIndex++)
         {
