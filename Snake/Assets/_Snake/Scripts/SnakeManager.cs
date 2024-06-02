@@ -7,23 +7,27 @@ public class SnakeManager : MonoBehaviour
 {
     [SerializeField] private SnakeSO _snakeSO;
 
+    [SerializeField] private SnakePart _headPart;
     [SerializeField] List<GameObject> _bodyPrefabs = new List<GameObject>();
 
     private List<SnakePart> _snakePart = new List<SnakePart>();
     private float _distanceCount = 0f;
 
     private Rigidbody2D _headRB;
-    private float currentInputAngle;
-    private float currentSpeed;
+    [ReadOnly] [SerializeField] private float _currentInputAngle;
+    private float _currentSpeed;
+    private bool _canMoveInput = true;
+    private Coroutine _disableInputCoroutine;
+
 
     #region LC
     private void Start() 
     {
-        GameObject head = Instantiate(_bodyPrefabs[0], transform.position, transform.rotation, this.transform);
+        _snakePart.Add(_headPart);  
 
-        _snakePart.Add(head.GetComponent<SnakePart>());  
+        _headRB = _headPart.GetComponent<Rigidbody2D>();
 
-        _headRB = head.GetComponent<Rigidbody2D>();
+        _canMoveInput = true;
     }
 
     private void FixedUpdate()
@@ -47,7 +51,7 @@ public class SnakeManager : MonoBehaviour
     #region Head
     private void MoveSnake()
     {
-        _headRB.velocity = _snakePart[0].transform.right * currentSpeed;
+        _headRB.velocity = _snakePart[0].transform.right * _currentSpeed;
     }
     private void RotateSnake()
     {
@@ -56,26 +60,51 @@ public class SnakeManager : MonoBehaviour
         // {
         //     _snakePart[0].transform.Rotate(new Vector3(0, 0, - _snakeSO.RotationSpeed * Time.deltaTime * horizontalInput));
         // }
+        if(!_canMoveInput)    return;
         
         if(_snakeSO.HandleMoveDirection() != Vector2.zero)
         {
-            currentInputAngle = _snakeSO.GetAngleFromVector(_snakeSO.HandleMoveDirection());
+            _currentInputAngle = _snakeSO.GetAngleFromVector(_snakeSO.HandleMoveDirection());
         }
-        _snakePart[0].transform.eulerAngles = new Vector3(0, 0, currentInputAngle);
+        _snakePart[0].transform.eulerAngles = new Vector3(0, 0, _currentInputAngle);
     }
     private void HandleAcclerate()
     {
         if(Input.GetKey(_snakeSO.AcclerateKey))
         {
-            currentSpeed = _snakeSO.shiftSpeed;
+            _currentSpeed = _snakeSO.shiftSpeed;
         }
         else
         {
-            currentSpeed = _snakeSO.Speed;
+            _currentSpeed = _snakeSO.Speed;
         }
+    }
+    public void MoveNegative()
+    {
+        DisableInput();
+        
+        _currentInputAngle = _currentInputAngle - 180f;
+        
+        _snakePart[0].transform.eulerAngles = new Vector3(0, 0, _currentInputAngle);
+    }
+    private void DisableInput()
+    {
+        if(_disableInputCoroutine != null)
+        {
+            _disableInputCoroutine = null;
+            _disableInputCoroutine = StartCoroutine(Coroutine_DisableMovement());
+        }
+        _disableInputCoroutine = StartCoroutine(Coroutine_DisableMovement());
+    }
+    private IEnumerator Coroutine_DisableMovement()
+    {
+        _canMoveInput = false;
+        yield return new WaitForSeconds(_snakeSO.disableInputTime);
+        _canMoveInput = true;
     }
     #endregion
 
+    #region Body
     private void FollowHead()
     {
         if(_snakePart.Count > 1)
@@ -90,8 +119,6 @@ public class SnakeManager : MonoBehaviour
                 lastPart.SnakeParts.RemoveAt(0);
             }
         }
-
-        // _snakePart[_snakePart.Count - 1].ClearHistoryInfo(); // remove final part history info
     }
 
     private void CreateBody()
@@ -117,4 +144,5 @@ public class SnakeManager : MonoBehaviour
             _distanceCount = 0f;
         }
     }
+    #endregion
 }

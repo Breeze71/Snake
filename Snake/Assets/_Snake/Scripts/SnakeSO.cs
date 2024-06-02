@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SnakeSO")]
+[CreateAssetMenu(fileName = "Snake", menuName = "Snake / Snake Move")]
 public class SnakeSO : ScriptableObject
 {
     public float Speed = 2f;
@@ -10,6 +10,7 @@ public class SnakeSO : ScriptableObject
     public float Distance = .5f;
     public KeyCode AcclerateKey;
     public float shiftSpeed = 5f;
+    public float disableInputTime = .5f;
 
     private float horizontalInput;
     private float verticalInput;

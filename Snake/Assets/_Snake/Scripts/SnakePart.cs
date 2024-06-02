@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class SnakePart : MonoBehaviour
 {
     // store all history Transform
     public List<SnakePartInfo> SnakeParts = new List<SnakePartInfo>();
+    [Expandable][SerializeField] protected SnakePartSO _partSO;
 
     private void FixedUpdate() 
     {
