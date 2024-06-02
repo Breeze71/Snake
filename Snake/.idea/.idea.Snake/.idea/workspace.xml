@@ -6,14 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="fc5e12f9-6dcb-46ec-a073-a6ffd09b7fd8" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Snake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Scene/Kaofish_shoot.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Scene/Kaofish_shoot.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Scene/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Scene/Prefabs/Bullet.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Scene/Prefabs/Bullet.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/Level_01/Death.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/Level_01/Death.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/Level_01/TB_Snake.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/Level_01/TB_Snake.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/Level_01/TL_BU_D_3_Split4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/Level_01/TL_BU_D_3_Split4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/Level_01/TL_BU_D_5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/Level_01/TL_BU_D_5.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/Level_01/TR_UB_D_5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/Level_01/TR_UB_D_5.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Scene/Test_BulletPro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Scene/Test_BulletPro.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Scene/kaofish_shoot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Scene/kaofish_shoot.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1717156219639</updated>
       <workItem from="1717156221974" duration="1590000" />
-      <workItem from="1717232643769" duration="733000" />
+      <workItem from="1717232643769" duration="5609000" />
     </task>
     <servers />
   </component>
