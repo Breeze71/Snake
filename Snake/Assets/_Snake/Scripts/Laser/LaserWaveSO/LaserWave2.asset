@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cf4ea46cb98b374d8422aa92f5464d2, type: 3}
-  m_Name: New Snake SO
+  m_Script: {fileID: 11500000, guid: 788633101efd55546a7ed1a3999f616b, type: 3}
+  m_Name: LaserWave2
   m_EditorClassIdentifier: 
-  Speed: 2
-  RotationSpeed: 180
-  Distance: 0.5
-  AcclerateKey: 304
-  shiftSpeed: 4
+  _spawnCountDown: 2
+  LaserInfos:
+  - {fileID: 11400000, guid: be11f41d90dc3514e8bf4a6d10c96c75, type: 2}

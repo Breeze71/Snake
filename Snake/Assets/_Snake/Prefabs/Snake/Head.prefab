@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1226097302712541112}
   - component: {fileID: 9064921691212346965}
-  - component: {fileID: 4663916219861657491}
   - component: {fileID: -5487199704861133256}
+  - component: {fileID: -7049225801848090073}
   m_Layer: 6
-  m_Name: SnakeBody
+  m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,19 +62,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4663916219861657491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4412768727739483253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdc9c5a7ba2cd49419e6bc3a2517aaef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SnakeParts: []
 --- !u!61 &-5487199704861133256
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -120,6 +107,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-7049225801848090073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4412768727739483253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65664d99a294344abb396b2465feb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SnakeParts: []
 --- !u!1 &8923835890780436324
 GameObject:
   m_ObjectHideFlags: 0
