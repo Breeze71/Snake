@@ -6,7 +6,7 @@ public class BodyPart : SnakePart
 {
     public override void HitByLaser(int damageAmount)
     {
-        _snake.DestroyBodyAndAfter(this);
+        _snake.DestroyBodyAndAfter(partIndex);
     }
 
     public override void HitByBullet(int damageAmount)

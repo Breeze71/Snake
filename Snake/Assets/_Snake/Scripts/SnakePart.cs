@@ -5,11 +5,16 @@ using UnityEngine;
 public abstract class SnakePart : MonoBehaviour
 {
     // store all history Transform
-    [ReadOnly] public int Index;
+    [ReadOnly] public int partIndex;
     public List<SnakePartInfo> SnakeInfos = new List<SnakePartInfo>();
     [Expandable][SerializeField] protected SnakePartSO _partSO;
 
     [SerializeField] protected SnakeManager _snake;
+
+    private void OnEnable()
+    {
+        _snake = GetComponentInParent<SnakeManager>();
+    }
 
     private void FixedUpdate() 
     {

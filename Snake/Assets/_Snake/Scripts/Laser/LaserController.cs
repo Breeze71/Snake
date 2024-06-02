@@ -67,7 +67,6 @@ public class LaserController : MonoBehaviour
         SnakePart part; 
         if(hit2D.collider.TryGetComponent(out part))
         {
-            Debug.Log("hit by laser");
             part.HitByLaser(1);
         }
     }

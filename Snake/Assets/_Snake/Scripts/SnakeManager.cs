@@ -121,7 +121,7 @@ public class SnakeManager : MonoBehaviour
     private void SpawnSnake()
     {
         _snakePart.Add(_headPart);
-        _headPart.Index = 0;
+        _headPart.partIndex = 0;
     }
     #endregion
 
@@ -159,7 +159,7 @@ public class SnakeManager : MonoBehaviour
             SnakePart bodyPart = body.GetComponent<SnakePart>();
 
             _snakePart.Add(bodyPart);
-            bodyPart.Index = _snakePart.Count - 1; // currentIndex
+            bodyPart.partIndex = _snakePart.Count - 1; // currentIndex
 
             bodyPart.ClearHistoryInfo();
 
@@ -176,9 +176,14 @@ public class SnakeManager : MonoBehaviour
 
     }
 
-    public void DestroyBodyAndAfter(SnakePart snakePart)
+    [Button]
+    public void CreateBody()
     {
-        for(int i = _snakePart.Count - 1; i >= snakePart.Index ; i--)
+        _spawnAmount++;
+    }
+    public void DestroyBodyAndAfter(int partIndex)
+    {
+        for(int i = _snakePart.Count - 1; i >= partIndex ; i--)
         {
             Destroy(_snakePart[i].gameObject);
             _snakePart.RemoveAt(i);
@@ -193,12 +198,6 @@ public class SnakeManager : MonoBehaviour
             Destroy(_snakePart[i].gameObject);
             _snakePart.RemoveAt(i);
         }
-    }
-
-    [Button]
-    public void SpawnBody()
-    {
-        _spawnAmount++;
     }
     #endregion
 }
