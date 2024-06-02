@@ -5,7 +5,8 @@ using UnityEngine;
 public abstract class SnakePart : MonoBehaviour
 {
     // store all history Transform
-    public List<SnakePartInfo> SnakeParts = new List<SnakePartInfo>();
+    [ReadOnly] public int Index;
+    public List<SnakePartInfo> SnakeInfos = new List<SnakePartInfo>();
     [Expandable][SerializeField] protected SnakePartSO _partSO;
 
     [SerializeField] protected SnakeManager _snake;
@@ -17,13 +18,13 @@ public abstract class SnakePart : MonoBehaviour
 
     public void StoreHistoryInfo()
     {
-        SnakeParts.Add(new SnakePartInfo(transform.position, transform.rotation));
+        SnakeInfos.Add(new SnakePartInfo(transform.position, transform.rotation));
     }
 
     public void ClearHistoryInfo()
     {
-        SnakeParts.Clear();
-        SnakeParts.Add(new SnakePartInfo(transform.position, transform.rotation));
+        SnakeInfos.Clear();
+        SnakeInfos.Add(new SnakePartInfo(transform.position, transform.rotation));
     }
 
     public abstract void HitByLaser(int damageAmount);

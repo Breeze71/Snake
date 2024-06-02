@@ -172,8 +172,8 @@ MonoBehaviour:
   _headPart: {fileID: 430199880}
   _bodyPrefabs:
   - {fileID: 4412768727739483253, guid: aa9d2157fc227e34a8f305a7321b9344, type: 3}
-  - {fileID: 4412768727739483253, guid: 186521bc66576aa45b5942006074de0f, type: 3}
   - {fileID: 4412768727739483253, guid: 50e65b6001f8de645b1bb7a373762b9e, type: 3}
+  - {fileID: 4412768727739483253, guid: 186521bc66576aa45b5942006074de0f, type: 3}
 --- !u!1 &430199877 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4412768727739483253, guid: aa9d2157fc227e34a8f305a7321b9344, type: 3}
@@ -1326,7 +1326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1841826326955944714, guid: f629f1febc85dfc45b6336b5c41b0529, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3222641346540000973, guid: f629f1febc85dfc45b6336b5c41b0529, type: 3}
       propertyPath: m_RootOrder

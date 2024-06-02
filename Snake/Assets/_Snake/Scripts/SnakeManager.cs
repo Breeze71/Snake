@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
@@ -8,31 +9,35 @@ public class SnakeManager : MonoBehaviour
     [Expandable][SerializeField] private SnakeSO _snakeSO;
 
     // body
+    public int _spawnAmount = 1;
     [SerializeField] private SnakePart _headPart;
-    [SerializeField] List<GameObject> _bodyPrefabs = new List<GameObject>();
-    private List<SnakePart> _snakePart = new List<SnakePart>();
+    [SerializeField] private List<GameObject> _bodyPrefabs = new List<GameObject>();
+    [ReadOnly] [SerializeField] private List<SnakePart> _snakePart = new List<SnakePart>();
     private float _distanceCount = 0f;
+    private bool isSpawnCore = true;
 
     // move
     private Rigidbody2D _headRB;
     private float _currentInputAngle;
     private float _currentSpeed;
-    [SerializeField] [ReadOnly] private bool _canMoveInput = true;
+    private bool _canMoveInput = true;
     private Coroutine _disableInputCoroutine;
 
     // health
     public HealthSystem SnakeHealth;
 
     #region LC
+    private void Awake() 
+    {
+        SnakeHealth = new HealthSystem(_snakeSO.HealthAmount);
+    }
     private void Start() 
     {
-        _snakePart.Add(_headPart);  
+        SpawnSnake();
 
         _headRB = _headPart.GetComponent<Rigidbody2D>();
 
         _canMoveInput = true;
-
-        SnakeHealth = new HealthSystem(_snakeSO.HealthAmount);
     }
 
     private void FixedUpdate()
@@ -44,9 +49,9 @@ public class SnakeManager : MonoBehaviour
 
     private void Update() 
     {
-        if(_snakePart.Count > 0 && _snakePart.Count < 5)
+        if(_spawnAmount > 0)
         {
-            CreateBody();
+            CreateSnakePart();
         }
 
         HandleAcclerate();
@@ -112,6 +117,14 @@ public class SnakeManager : MonoBehaviour
     }
     #endregion
 
+    #region Init
+    private void SpawnSnake()
+    {
+        _snakePart.Add(_headPart);
+        _headPart.Index = 0;
+    }
+    #endregion
+
     #region Body
     private void FollowHead()
     {
@@ -121,17 +134,17 @@ public class SnakeManager : MonoBehaviour
             for(int i = 1; i < _snakePart.Count; i++)
             {
                 SnakePart lastPart = _snakePart[i - 1];
-                _snakePart[i].transform.position = lastPart.SnakeParts[0].Position;
-                _snakePart[i].transform.rotation = lastPart.SnakeParts[0].Rotation;
+                _snakePart[i].transform.position = lastPart.SnakeInfos[0].Position;
+                _snakePart[i].transform.rotation = lastPart.SnakeInfos[0].Rotation;
 
-                lastPart.SnakeParts.RemoveAt(0);
+                lastPart.SnakeInfos.RemoveAt(0);
             }
         }
     }
 
-    private void CreateBody()
+    private void CreateSnakePart()
     {
-        SnakePart snakePart = _snakePart[_snakePart.Count - 1].GetComponent<SnakePart>();
+        SnakePart snakePart = _snakePart[_snakePart.Count - 1];
 
         if(_distanceCount == 0)
         {
@@ -142,35 +155,50 @@ public class SnakeManager : MonoBehaviour
 
         if(_distanceCount >= _snakeSO.Distance)
         {
-            GameObject body = Instantiate(_bodyPrefabs[1], snakePart.SnakeParts[0].Position, snakePart.SnakeParts[0].Rotation, this.transform);  
+            GameObject body = Instantiate(_bodyPrefabs[1], snakePart.SnakeInfos[0].Position, snakePart.SnakeInfos[0].Rotation, this.transform);  
+            SnakePart bodyPart = body.GetComponent<SnakePart>();
 
-            _snakePart.Add(body.GetComponent<SnakePart>());
-            // _bodyPrefabs.RemoveAt(0);
+            _snakePart.Add(bodyPart);
+            bodyPart.Index = _snakePart.Count - 1; // currentIndex
 
-            body.GetComponent<SnakePart>().ClearHistoryInfo();
+            bodyPart.ClearHistoryInfo();
 
             _distanceCount = 0f;
-        }
+            _spawnAmount--;
+
+            // 只生成一次 core
+            if(isSpawnCore)
+            {
+                _bodyPrefabs.RemoveAt(1);
+                isSpawnCore = false;
+            }
+        }   
+
     }
 
     public void DestroyBodyAndAfter(SnakePart snakePart)
     {
-        bool isDestroyIndex = false;
-        Debug.Log("des");
-        for(int i = _snakePart.Count - 1; i >= 0 ; i--)
+        for(int i = _snakePart.Count - 1; i >= snakePart.Index ; i--)
         {
-            if(isDestroyIndex)
-            {
-                _snakePart.RemoveAt(i);
-                Destroy(snakePart);
-            }
-
-            if(snakePart = _snakePart[i])
-            {
-                isDestroyIndex = true;
-                continue;
-            }
+            Destroy(_snakePart[i].gameObject);
+            _snakePart.RemoveAt(i);
         }
+    }
+
+    [Button]
+    public void TestDestroy()
+    {
+        for(int i = _snakePart.Count - 1; i >= 2 ; i--)
+        {
+            Destroy(_snakePart[i].gameObject);
+            _snakePart.RemoveAt(i);
+        }
+    }
+
+    [Button]
+    public void SpawnBody()
+    {
+        _spawnAmount++;
     }
     #endregion
 }
