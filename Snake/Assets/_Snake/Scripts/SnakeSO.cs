@@ -5,9 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SnakeSO")]
 public class SnakeSO : ScriptableObject
 {
-    public float Speed = 200f;
+    public float Speed = 2f;
     public float RotationSpeed = 180f;
     public float Distance = .5f;
+    public KeyCode AcclerateKey;
+    public float shiftSpeed = 5f;
 
     private float horizontalInput;
     private float verticalInput;

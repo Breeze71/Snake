@@ -14,6 +14,7 @@ public class SnakeManager : MonoBehaviour
 
     private Rigidbody2D _headRB;
     private float currentInputAngle;
+    private float currentSpeed;
 
     #region LC
     private void Start() 
@@ -38,13 +39,15 @@ public class SnakeManager : MonoBehaviour
         {
             CreateBody();
         }
+
+        HandleAcclerate();
     }
     #endregion
 
     #region Head
     private void MoveSnake()
     {
-        _headRB.velocity = _snakePart[0].transform.right * _snakeSO.Speed;
+        _headRB.velocity = _snakePart[0].transform.right * currentSpeed;
     }
     private void RotateSnake()
     {
@@ -59,6 +62,17 @@ public class SnakeManager : MonoBehaviour
             currentInputAngle = _snakeSO.GetAngleFromVector(_snakeSO.HandleMoveDirection());
         }
         _snakePart[0].transform.eulerAngles = new Vector3(0, 0, currentInputAngle);
+    }
+    private void HandleAcclerate()
+    {
+        if(Input.GetKey(_snakeSO.AcclerateKey))
+        {
+            currentSpeed = _snakeSO.shiftSpeed;
+        }
+        else
+        {
+            currentSpeed = _snakeSO.Speed;
+        }
     }
     #endregion
 

@@ -169,8 +169,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _snakeSO: {fileID: 11400000, guid: 5d528762c15dff9469ca5d4f3eb8f470, type: 2}
   _bodyPrefabs:
-  - {fileID: 8147198083993492357, guid: 776f1281b301079408a45ff1ad6a62ae, type: 3}
-  - {fileID: 4412768727739483253, guid: a6a7303e3b3cb8244bf40a12c1367734, type: 3}
+  - {fileID: 4412768727739483253, guid: aa9d2157fc227e34a8f305a7321b9344, type: 3}
+  - {fileID: 4412768727739483253, guid: 50e65b6001f8de645b1bb7a373762b9e, type: 3}
+  - {fileID: 4412768727739483253, guid: 186521bc66576aa45b5942006074de0f, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +594,10 @@ PrefabInstance:
     - target: {fileID: 1841826326955944714, guid: f629f1febc85dfc45b6336b5c41b0529, type: 3}
       propertyPath: m_Name
       value: LaserWaveSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841826326955944714, guid: f629f1febc85dfc45b6336b5c41b0529, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3222641346540000973, guid: f629f1febc85dfc45b6336b5c41b0529, type: 3}
       propertyPath: m_RootOrder
