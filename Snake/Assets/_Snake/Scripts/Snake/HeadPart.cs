@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HeadPart : SnakePart
 {
-    [SerializeField] private SnakeManager _snake;
-
     private void Awake() 
     {
         _snake = GetComponentInParent<SnakeManager>();    
@@ -15,8 +13,17 @@ public class HeadPart : SnakePart
     {
         if((_partSO.ObstacleMask.value & (1 << other.gameObject.layer)) > 0)
         {
-            Debug.Log("Hit Obstacle");
             _snake.MoveNegative();
         }
+    }
+
+    public override void HitByLaser(int damageAmount)
+    {
+        // minus health
+    }
+
+    public override void HitByBullet(int damageAmount)
+    {
+        
     }
 }

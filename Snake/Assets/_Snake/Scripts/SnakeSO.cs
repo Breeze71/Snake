@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Snake", menuName = "Snake / Snake Move")]
 public class SnakeSO : ScriptableObject
 {
+    // move
+    [Header("Move")]
     public float Speed = 2f;
     public float RotationSpeed = 180f;
     public float Distance = .5f;
@@ -14,6 +16,10 @@ public class SnakeSO : ScriptableObject
 
     private float horizontalInput;
     private float verticalInput;
+
+    // health
+    [Header("Health")]
+    public int HealthAmount;
 
     public Vector2 HandleMoveDirection()
     {

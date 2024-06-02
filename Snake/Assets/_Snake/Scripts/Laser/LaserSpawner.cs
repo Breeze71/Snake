@@ -11,10 +11,13 @@ public class LaserSpawner : MonoBehaviour
     public static LaserSpawner I {private set; get;}
 
     [SerializeField] private GameObject LaserPrefab;
-    [Expandable]
+    [Expandable][ReorderableList]
     [SerializeField] private LaserWaveSO[] _laserWaves;
 
     private ObjectPool<LaserController> _laserPool;
+
+    [SerializeField] private bool _editMode = false;
+    private Coroutine _laserEnableCoroutine;
 
     #region LC
     private void Awake() 
@@ -31,13 +34,15 @@ public class LaserSpawner : MonoBehaviour
 
     private void Start() 
     {
-        // if(_laserEnableCoroutine != null)
-        // {
-        //     _laserEnableCoroutine = null;
-        //     _laserEnableCoroutine = StartCoroutine(Coroutine_StartLaserWave());
-        // }
+        if(!_editMode) return;
+        
+        if(_laserEnableCoroutine != null)
+        {
+            _laserEnableCoroutine = null;
+            _laserEnableCoroutine = StartCoroutine(Coroutine_StartLaserWave());
+        }
 
-        // _laserEnableCoroutine = StartCoroutine(Coroutine_StartLaserWave());
+        _laserEnableCoroutine = StartCoroutine(Coroutine_StartLaserWave());
     }
 
     private void Update() 
@@ -65,15 +70,15 @@ public class LaserSpawner : MonoBehaviour
         }
     }
 
-    // private IEnumerator Coroutine_StartLaserWave()
-    // {
-    //     for(int laserWaveIndex = 0; laserWaveIndex < _laserWaves.Length; laserWaveIndex++)
-    //     {
-    //         yield return new WaitForSeconds(_laserWaves[laserWaveIndex]._spawnCountDown);
+    private IEnumerator Coroutine_StartLaserWave()
+    {
+        for(int laserWaveIndex = 0; laserWaveIndex < _laserWaves.Length; laserWaveIndex++)
+        {
+            yield return new WaitForSeconds(_laserWaves[laserWaveIndex]._spawnCountDown);
 
-    //         List<LaserController> newLasers = GetLaserFromPool(_laserWaves[laserWaveIndex].LaserInfos.Length, laserWaveIndex);
-    //     }
-    // }
+            List<LaserController> newLasers = GetLaserFromPool(_laserWaves[laserWaveIndex].LaserInfos.Length, laserWaveIndex);
+        }
+    }
 
     #region Object Pool
     private LaserController CreatePool()

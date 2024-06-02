@@ -17,3 +17,5 @@ MonoBehaviour:
   Distance: 0.5
   AcclerateKey: 304
   shiftSpeed: 4
+  disableInputTime: 0.5
+  HealthAmount: 5

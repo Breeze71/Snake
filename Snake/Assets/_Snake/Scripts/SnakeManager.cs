@@ -5,20 +5,23 @@ using UnityEngine;
 
 public class SnakeManager : MonoBehaviour
 {
-    [SerializeField] private SnakeSO _snakeSO;
+    [Expandable][SerializeField] private SnakeSO _snakeSO;
 
+    // body
     [SerializeField] private SnakePart _headPart;
     [SerializeField] List<GameObject> _bodyPrefabs = new List<GameObject>();
-
     private List<SnakePart> _snakePart = new List<SnakePart>();
     private float _distanceCount = 0f;
 
+    // move
     private Rigidbody2D _headRB;
-    [ReadOnly] [SerializeField] private float _currentInputAngle;
+    private float _currentInputAngle;
     private float _currentSpeed;
-    private bool _canMoveInput = true;
+    [SerializeField] [ReadOnly] private bool _canMoveInput = true;
     private Coroutine _disableInputCoroutine;
 
+    // health
+    public HealthSystem SnakeHealth;
 
     #region LC
     private void Start() 
@@ -28,6 +31,8 @@ public class SnakeManager : MonoBehaviour
         _headRB = _headPart.GetComponent<Rigidbody2D>();
 
         _canMoveInput = true;
+
+        SnakeHealth = new HealthSystem(_snakeSO.HealthAmount);
     }
 
     private void FixedUpdate()
@@ -48,7 +53,7 @@ public class SnakeManager : MonoBehaviour
     }
     #endregion
 
-    #region Head
+    #region Head Movement
     private void MoveSnake()
     {
         _headRB.velocity = _snakePart[0].transform.right * _currentSpeed;
@@ -70,6 +75,8 @@ public class SnakeManager : MonoBehaviour
     }
     private void HandleAcclerate()
     {
+        if(!_canMoveInput) return;
+
         if(Input.GetKey(_snakeSO.AcclerateKey))
         {
             _currentSpeed = _snakeSO.shiftSpeed;
@@ -82,7 +89,7 @@ public class SnakeManager : MonoBehaviour
     public void MoveNegative()
     {
         DisableInput();
-        
+
         _currentInputAngle = _currentInputAngle - 180f;
         
         _snakePart[0].transform.eulerAngles = new Vector3(0, 0, _currentInputAngle);
@@ -91,8 +98,9 @@ public class SnakeManager : MonoBehaviour
     {
         if(_disableInputCoroutine != null)
         {
-            _disableInputCoroutine = null;
+            StopCoroutine(_disableInputCoroutine);
             _disableInputCoroutine = StartCoroutine(Coroutine_DisableMovement());
+            return;
         }
         _disableInputCoroutine = StartCoroutine(Coroutine_DisableMovement());
     }
@@ -142,6 +150,26 @@ public class SnakeManager : MonoBehaviour
             body.GetComponent<SnakePart>().ClearHistoryInfo();
 
             _distanceCount = 0f;
+        }
+    }
+
+    public void DestroyBodyAndAfter(SnakePart snakePart)
+    {
+        bool isDestroyIndex = false;
+        Debug.Log("des");
+        for(int i = _snakePart.Count - 1; i >= 0 ; i--)
+        {
+            if(isDestroyIndex)
+            {
+                _snakePart.RemoveAt(i);
+                Destroy(snakePart);
+            }
+
+            if(snakePart = _snakePart[i])
+            {
+                isDestroyIndex = true;
+                continue;
+            }
         }
     }
     #endregion
