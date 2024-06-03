@@ -60,14 +60,6 @@ namespace V
             SetActionMap(InputType.GamePlay);
         }
 
-        private void Update() 
-        {
-            // string currentControlScheme = _playerInput.controlSchemes[0].name;
-            // string actionControlScheme = _playerInput.asset.controlSchemes[0].name;
-            // Debug.Log(currentControlScheme);
-            // Debug.Log(actionControlScheme);            
-        }
-
         private void OnDisable() 
         {
  
@@ -110,8 +102,6 @@ namespace V
 
         public void OnShootDirection(InputAction.CallbackContext context)
         {
-            Vector2 aimdir = context.ReadValue<Vector2>();
-
             AimDirectionEvent?.Invoke(context.ReadValue<Vector2>());
         }
         public void OnShoot(InputAction.CallbackContext context)

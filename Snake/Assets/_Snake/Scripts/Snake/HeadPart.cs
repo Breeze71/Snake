@@ -6,12 +6,14 @@ using V;
 
 public class HeadPart : SnakePart
 {
-    [SerializeField] private GameObject _bulletPrefabs;
+    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private SnakeBullet _bulletPrefabs;
     [SerializeField] private GameObject _indicator;
+    [SerializeField] private Transform _firePoint;
     
+    private SnakeBullet _currentBullet;
     private Vector2 _aimDirection;
     private Coroutine _aimHoldCoroutine;
-    private int _currentBulletDamage = 0;
 
     #region LC
     private void Awake() 
@@ -24,6 +26,17 @@ public class HeadPart : SnakePart
         InputManager.Instance.AimEvent += InputManager_OnAim;
         InputManager.Instance.AimCanceledEvent += InputManager_OnAimCanceled;
         InputManager.Instance.AimDirectionEvent += InputManager_OnAimDirection;
+    }
+
+    private void Update() 
+    {
+        _indicator.transform.rotation = Quaternion.Euler(0f, 0f, GetAngleFromVector(_aimDirection));
+        _indicator.transform.position = transform.position;   
+
+        if(_currentBullet != null)
+        {
+            _currentBullet.transform.position = _firePoint.position; 
+        } 
     }
 
     private void OnDisable() 
@@ -44,7 +57,8 @@ public class HeadPart : SnakePart
 
     private void InputManager_OnAimDirection(Vector2 aimDir)
     {
-
+        _aimDirection = aimDir;
+        _aimDirection = Camera.main.ScreenToWorldPoint((Vector3)_aimDirection) - transform.position;
     }
 
     private void InputManager_OnAim()
@@ -58,13 +72,27 @@ public class HeadPart : SnakePart
             StopCoroutine(_aimHoldCoroutine);
             _aimHoldCoroutine = StartCoroutine(Coroutine_AimHold());            
         }
+
+        _aimDirection = _rb.velocity;
+
+        if(_snake.GetCurrentBodyCount() <= 2)   return;
+
+        _currentBullet = Instantiate(_bulletPrefabs, _firePoint);
     }
 
     private void InputManager_OnAimCanceled()
     {
-        StopCoroutine(_aimHoldCoroutine);
+        if(_aimHoldCoroutine != null)
+        {
+            StopCoroutine(_aimHoldCoroutine);
+        }
+        
+        _indicator.SetActive(false);
 
         // shot
+        _currentBullet.transform.SetParent(null);
+        _currentBullet.Shoot(_aimDirection);
+        _currentBullet = null;
     }
 
     private IEnumerator Coroutine_AimHold()
@@ -73,9 +101,11 @@ public class HeadPart : SnakePart
         {
             if(_snake.GetCurrentBodyCount() <= 2)   break;
 
+            _indicator.SetActive(true);
             yield return new WaitForSeconds(_partSO.BulletChargingTime);
+
+            _currentBullet.ChargeDamage++;
             _snake.DestroyLastBody();
-            _currentBulletDamage++;
         }
     }
 
@@ -90,5 +120,17 @@ public class HeadPart : SnakePart
         
     }
     #endregion
+
+    public float GetAngleFromVector(Vector2 dir)
+    {
+        float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+        if(n < 0)
+        {
+            n += 360f;
+        }
+
+        return n;
+    }
 
 }
