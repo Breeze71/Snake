@@ -104,6 +104,8 @@ public class SnakeManager : MonoBehaviour
     }
     public void MoveNegative()
     {
+        if(!_canMoveInput) return;
+
         StartDisableInput();
 
         _currentInputAngle = _currentInputAngle - 180f;
@@ -186,15 +188,32 @@ public class SnakeManager : MonoBehaviour
     }
     public void DestroyBodyAndAfter(int partIndex)
     {
+        if(_isInvincible)   return;
+
         for(int i = _snakePart.Count - 1; i >= partIndex ; i--)
         {
             Destroy(_snakePart[i].gameObject);
             _snakePart.RemoveAt(i);
         }
     }
+    public void DestroyLastBody()
+    {
+        if(_snakePart.Count > 2)
+        {
+            int lastPartIndex = _snakePart.Count - 1;
+
+            Destroy(_snakePart[lastPartIndex].gameObject);
+            _snakePart.RemoveAt(lastPartIndex);
+        }
+    }
+
+    public int GetCurrentBodyCount()
+    {
+        return _snakePart.Count;
+    }
 
     [Button]
-    public void TestDestroy()
+    private void TestDestroy()
     {
         for(int i = _snakePart.Count - 1; i >= 2 ; i--)
         {
@@ -209,8 +228,8 @@ public class SnakeManager : MonoBehaviour
     {
         if(_isInvincible)   return;
 
-        SnakeHealth.TakeDamage(damage);
         StartInvincible();
+        SnakeHealth.TakeDamage(damage);
     }
 
     private void StartInvincible()
@@ -218,14 +237,15 @@ public class SnakeManager : MonoBehaviour
         if(_invincibleCoroutine != null)
         {
             StopCoroutine(_invincibleCoroutine);
-            _invincibleCoroutine = StartCoroutine(Coroutine_DisableMovement());
+            _invincibleCoroutine = StartCoroutine(Coroutine_Invincible());
             return;
         }
-        _invincibleCoroutine = StartCoroutine(Coroutine_DisableMovement());
+        _invincibleCoroutine = StartCoroutine(Coroutine_Invincible());
     }
 
     private IEnumerator Coroutine_Invincible()
     {
+        MoveNegative();
         _isInvincible = true;
         yield return new WaitForSeconds(_snakeSO.InvincibleTime);
         _isInvincible = false;
