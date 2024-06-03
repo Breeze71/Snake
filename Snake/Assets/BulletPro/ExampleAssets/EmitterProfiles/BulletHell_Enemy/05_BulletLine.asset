@@ -29,7 +29,7 @@ MonoBehaviour:
   foldoutExport: 0
   foldoutEmptyBin: 0
   foldoutCompactMode: 0
-  currentParamsSelected: {fileID: 114247147085833590}
+  currentParamsSelected: {fileID: 114964359049590580}
   numberOfSubAssets: 4
 --- !u!114 &114247147085833590
 MonoBehaviour:
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 2988062
+  uniqueIndex: 6655383
   profile: {fileID: 11400000}
   parent: {fileID: 114676994745875216}
   children:
@@ -271,7 +271,7 @@ MonoBehaviour:
         parameterType: 0
         relativeTo: 0
         parameterName: 
-      defaultValue: 22
+      defaultValue: 3
     useSlider: 0
     sliderMin: 0
     sliderMax: 0
@@ -286,82 +286,6 @@ MonoBehaviour:
     useDifferentBullet: 0
     bulletParams: {fileID: 0}
   - index: 2
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 3
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 4
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 5
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 6
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 7
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 8
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 9
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 10
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 11
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 12
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 13
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 14
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 15
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 16
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 17
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 18
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 19
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 20
-    bulletOrigin: {x: 0, y: 0, z: 0}
-    useDifferentBullet: 0
-    bulletParams: {fileID: 0}
-  - index: 21
     bulletOrigin: {x: 0, y: 0, z: 0}
     useDifferentBullet: 0
     bulletParams: {fileID: 0}
@@ -2619,91 +2543,15 @@ MonoBehaviour:
     selectionRectsVisible: 0
     postEffectBulletSpawns:
     - index: 0
-      bulletOrigin: {x: 2.8636365, y: 0, z: 0}
+      bulletOrigin: {x: 2, y: 0, z: 0}
       useDifferentBullet: 0
       bulletParams: {fileID: 0}
     - index: 1
-      bulletOrigin: {x: 2.5909092, y: 0, z: 0}
+      bulletOrigin: {x: 0, y: 0, z: 0}
       useDifferentBullet: 0
       bulletParams: {fileID: 0}
     - index: 2
-      bulletOrigin: {x: 2.318182, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 3
-      bulletOrigin: {x: 2.0454545, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 4
-      bulletOrigin: {x: 1.7727274, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 5
-      bulletOrigin: {x: 1.5, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 6
-      bulletOrigin: {x: 1.2272727, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 7
-      bulletOrigin: {x: 0.9545455, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 8
-      bulletOrigin: {x: 0.6818182, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 9
-      bulletOrigin: {x: 0.40909094, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 10
-      bulletOrigin: {x: 0.13636364, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 11
-      bulletOrigin: {x: -0.13636364, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 12
-      bulletOrigin: {x: -0.40909094, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 13
-      bulletOrigin: {x: -0.6818182, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 14
-      bulletOrigin: {x: -0.9545455, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 15
-      bulletOrigin: {x: -1.2272727, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 16
-      bulletOrigin: {x: -1.5, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 17
-      bulletOrigin: {x: -1.7727274, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 18
-      bulletOrigin: {x: -2.0454545, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 19
-      bulletOrigin: {x: -2.318182, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 20
-      bulletOrigin: {x: -2.5909092, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 21
-      bulletOrigin: {x: -2.8636365, y: 0, z: 0}
+      bulletOrigin: {x: -2, y: 0, z: 0}
       useDifferentBullet: 0
       bulletParams: {fileID: 0}
     enabled: 1
@@ -5067,94 +4915,18 @@ MonoBehaviour:
     selectionRectsVisible: 1
     postEffectBulletSpawns:
     - index: 0
-      bulletOrigin: {x: 2.8636365, y: 0, z: 0}
+      bulletOrigin: {x: 2, y: 0, z: 0}
       useDifferentBullet: 0
       bulletParams: {fileID: 0}
     - index: 1
-      bulletOrigin: {x: 2.5909092, y: 0, z: 0}
+      bulletOrigin: {x: 0, y: 0, z: 0}
       useDifferentBullet: 0
       bulletParams: {fileID: 0}
     - index: 2
-      bulletOrigin: {x: 2.318182, y: 0, z: 0}
+      bulletOrigin: {x: -2, y: 0, z: 0}
       useDifferentBullet: 0
       bulletParams: {fileID: 0}
-    - index: 3
-      bulletOrigin: {x: 2.0454545, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 4
-      bulletOrigin: {x: 1.7727274, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 5
-      bulletOrigin: {x: 1.5, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 6
-      bulletOrigin: {x: 1.2272727, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 7
-      bulletOrigin: {x: 0.9545455, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 8
-      bulletOrigin: {x: 0.6818182, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 9
-      bulletOrigin: {x: 0.40909094, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 10
-      bulletOrigin: {x: 0.13636364, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 11
-      bulletOrigin: {x: -0.13636364, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 12
-      bulletOrigin: {x: -0.40909094, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 13
-      bulletOrigin: {x: -0.6818182, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 14
-      bulletOrigin: {x: -0.9545455, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 15
-      bulletOrigin: {x: -1.2272727, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 16
-      bulletOrigin: {x: -1.5, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 17
-      bulletOrigin: {x: -1.7727274, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 18
-      bulletOrigin: {x: -2.0454545, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 19
-      bulletOrigin: {x: -2.318182, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 20
-      bulletOrigin: {x: -2.5909092, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 21
-      bulletOrigin: {x: -2.8636365, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    enabled: 1
+    enabled: 0
   - modifierType: 8
     globalMovement:
       valueTree:
@@ -7515,99 +7287,23 @@ MonoBehaviour:
     selectionRectsVisible: 1
     postEffectBulletSpawns:
     - index: 0
-      bulletOrigin: {x: 2.8636365, y: 0, z: 0}
+      bulletOrigin: {x: 2, y: 0, z: 0}
       useDifferentBullet: 0
       bulletParams: {fileID: 0}
     - index: 1
-      bulletOrigin: {x: 2.5909092, y: 0, z: 0}
+      bulletOrigin: {x: 0, y: 0, z: 0}
       useDifferentBullet: 0
       bulletParams: {fileID: 0}
     - index: 2
-      bulletOrigin: {x: 2.318182, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 3
-      bulletOrigin: {x: 2.0454545, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 4
-      bulletOrigin: {x: 1.7727274, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 5
-      bulletOrigin: {x: 1.5, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 6
-      bulletOrigin: {x: 1.2272727, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 7
-      bulletOrigin: {x: 0.9545455, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 8
-      bulletOrigin: {x: 0.6818182, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 9
-      bulletOrigin: {x: 0.40909094, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 10
-      bulletOrigin: {x: 0.13636364, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 11
-      bulletOrigin: {x: -0.13636364, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 12
-      bulletOrigin: {x: -0.40909094, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 13
-      bulletOrigin: {x: -0.6818182, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 14
-      bulletOrigin: {x: -0.9545455, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 15
-      bulletOrigin: {x: -1.2272727, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 16
-      bulletOrigin: {x: -1.5, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 17
-      bulletOrigin: {x: -1.7727274, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 18
-      bulletOrigin: {x: -2.0454545, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 19
-      bulletOrigin: {x: -2.318182, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 20
-      bulletOrigin: {x: -2.5909092, y: 0, z: 0}
-      useDifferentBullet: 0
-      bulletParams: {fileID: 0}
-    - index: 21
-      bulletOrigin: {x: -2.8636365, y: 0, z: 0}
+      bulletOrigin: {x: -2, y: 0, z: 0}
       useDifferentBullet: 0
       bulletParams: {fileID: 0}
     enabled: 1
   bulletParamsRandom: 0
   listOfPossibleBulletParams: []
   possibleBulletParams: 0
-  highestValues: {x: 2.8636365, y: 0, z: 0}
-  lowestValues: {x: -2.8636365, y: 0, z: 0}
+  highestValues: {x: 2, y: 0, z: 0}
+  lowestValues: {x: -2, y: 0, z: 0}
   hasBeenSerializedOnce: 1
   fakeBulletAmount: 0
   foldout0: 0
@@ -7625,7 +7321,7 @@ MonoBehaviour:
   outputTexture:
     tex: {fileID: 0}
     widthInWindow: 0.5
-    ingameDistance: 25
+    ingameDistance: 5
     orientation: 0
     justChangedOrientation: 0
     hasCompactEditor: 0
@@ -7652,7 +7348,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 2792317
+  uniqueIndex: 2424246
   profile: {fileID: 11400000}
   parent: {fileID: 114247147085833590}
   children: []
@@ -16638,7 +16334,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 3233523
+  uniqueIndex: 11596128
   profile: {fileID: 11400000}
   parent: {fileID: 114964359049590580}
   children:
@@ -21592,7 +21288,7 @@ MonoBehaviour:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
       displayName: Begin Loop
-    - enabled: 1
+    - enabled: 0
       instructionType: 6
       waitTime:
         valueTree:
@@ -41007,7 +40703,7 @@ MonoBehaviour:
   advancedFoldout: 0
   hasBeenSerializedOnce: 1
   focusedInstruction: -1
-  safetyForPlaymode: 16
+  safetyForPlaymode: 18
 --- !u!114 &114964359049590580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -41021,7 +40717,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 14773091
+  uniqueIndex: 757743
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -43345,7 +43041,7 @@ MonoBehaviour:
   foldoutVFX: 0
   hideSpriteList: 0
   vfxOpened: 0
-  currentlyDisplayedModule: 0
+  currentlyDisplayedModule: 1
   canMove: 0
   canCollide: 0
   isVisible: 0
