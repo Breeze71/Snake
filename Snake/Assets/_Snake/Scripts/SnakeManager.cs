@@ -9,10 +9,10 @@ public class SnakeManager : MonoBehaviour
     [Expandable][SerializeField] private SnakeSO _snakeSO;
 
     // body
-    public int _spawnAmount = 1;
-    [SerializeField] private SnakePart _headPart;
     [SerializeField] private List<GameObject> _bodyPrefabs = new List<GameObject>();
     [ReadOnly] [SerializeField] private List<SnakePart> _snakePart = new List<SnakePart>();
+    [ReadOnly] public int _spawnAmount = 1;
+    [SerializeField] private SnakePart _headPart;
     private float _distanceCount = 0f;
     private bool isSpawnCore = true;
 
@@ -24,7 +24,9 @@ public class SnakeManager : MonoBehaviour
     private Coroutine _disableInputCoroutine;
 
     // health
-    public HealthSystem SnakeHealth;
+    public HealthSystem SnakeHealth {get; private set;}
+    private bool _isInvincible = false;
+    private Coroutine _invincibleCoroutine;
 
     #region LC
     private void Awake() 
@@ -38,6 +40,7 @@ public class SnakeManager : MonoBehaviour
         _headRB = _headPart.GetComponent<Rigidbody2D>();
 
         _canMoveInput = true;
+        _isInvincible = false;
     }
 
     private void FixedUpdate()
@@ -55,6 +58,14 @@ public class SnakeManager : MonoBehaviour
         }
 
         HandleAcclerate();
+    }
+    #endregion
+    
+    #region Init
+    private void SpawnSnake()
+    {
+        _snakePart.Add(_headPart);
+        _headPart.partIndex = 0;
     }
     #endregion
 
@@ -93,13 +104,13 @@ public class SnakeManager : MonoBehaviour
     }
     public void MoveNegative()
     {
-        DisableInput();
+        StartDisableInput();
 
         _currentInputAngle = _currentInputAngle - 180f;
         
         _snakePart[0].transform.eulerAngles = new Vector3(0, 0, _currentInputAngle);
     }
-    private void DisableInput()
+    private void StartDisableInput()
     {
         if(_disableInputCoroutine != null)
         {
@@ -114,14 +125,6 @@ public class SnakeManager : MonoBehaviour
         _canMoveInput = false;
         yield return new WaitForSeconds(_snakeSO.disableInputTime);
         _canMoveInput = true;
-    }
-    #endregion
-
-    #region Init
-    private void SpawnSnake()
-    {
-        _snakePart.Add(_headPart);
-        _headPart.partIndex = 0;
     }
     #endregion
 
@@ -200,4 +203,44 @@ public class SnakeManager : MonoBehaviour
         }
     }
     #endregion
+
+    #region Take Damage
+    public void TakeDamage(int damage)
+    {
+        if(_isInvincible)   return;
+
+        SnakeHealth.TakeDamage(damage);
+        StartInvincible();
+    }
+
+    private void StartInvincible()
+    {
+        if(_invincibleCoroutine != null)
+        {
+            StopCoroutine(_invincibleCoroutine);
+            _invincibleCoroutine = StartCoroutine(Coroutine_DisableMovement());
+            return;
+        }
+        _invincibleCoroutine = StartCoroutine(Coroutine_DisableMovement());
+    }
+
+    private IEnumerator Coroutine_Invincible()
+    {
+        _isInvincible = true;
+        yield return new WaitForSeconds(_snakeSO.InvincibleTime);
+        _isInvincible = false;
+    }
+
+    [Button]
+    private void TestMinus2Health()
+    {
+        TakeDamage(2);
+    }
+    [Button]
+    private void TestHeal2()
+    {
+        SnakeHealth.Heal(2);
+    }
+    #endregion
+
 }

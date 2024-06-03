@@ -20,6 +20,7 @@ public class SnakeSO : ScriptableObject
     // health
     [Header("Health")]
     public int HealthAmount;
+    public float InvincibleTime = .5f;
 
     public Vector2 HandleMoveDirection()
     {

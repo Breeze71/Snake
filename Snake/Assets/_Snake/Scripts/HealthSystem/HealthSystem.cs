@@ -2,7 +2,7 @@ using System;
 
 public class HealthSystem
 {
-    public event Action HealthChangedEvent;
+    public event Action<int> HealthChangedEvent;
 
     private int health;
     private int healthMax;
@@ -27,8 +27,12 @@ public class HealthSystem
     {
         health -= _damageAmount;
 
-        if(health <= 0) health = 0;
-        if(HealthChangedEvent != null) HealthChangedEvent?.Invoke();
+        if(health <= 0)
+        {
+            health = 0;
+        }
+
+        HealthChangedEvent?.Invoke(health);
     }
 
     public void Heal(int _healthAmount)
@@ -36,6 +40,7 @@ public class HealthSystem
         health += _healthAmount;
 
         if(health >= healthMax) health = healthMax;
-        if(HealthChangedEvent != null) HealthChangedEvent?.Invoke();
+
+        HealthChangedEvent?.Invoke(health);
     }
 }
