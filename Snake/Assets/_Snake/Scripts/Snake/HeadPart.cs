@@ -14,11 +14,13 @@ public class HeadPart : SnakePart
     private SnakeBullet _currentBullet;
     private Vector2 _aimDirection;
     private Coroutine _aimHoldCoroutine;
+    private bool _isAiming = false;
 
     #region LC
     private void Awake() 
     {
         _snake = GetComponentInParent<SnakeManager>();    
+        _indicator.SetActive(false);
     }
 
     private void OnEnable() 
@@ -46,6 +48,9 @@ public class HeadPart : SnakePart
     }
     #endregion
 
+    private void OnCollisionEnter2D(Collision2D other) {
+        
+    }
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if((_partSO.ObstacleMask.value & (1 << other.gameObject.layer)) > 0)
@@ -63,6 +68,10 @@ public class HeadPart : SnakePart
 
     private void InputManager_OnAim()
     {
+        if(_snake.GetCurrentBodyCount() <= 2)   return;
+
+        _isAiming = true;
+
         if(_aimHoldCoroutine == null)
         {
             _aimHoldCoroutine = StartCoroutine(Coroutine_AimHold());
@@ -75,9 +84,10 @@ public class HeadPart : SnakePart
 
         _aimDirection = _rb.velocity;
 
-        if(_snake.GetCurrentBodyCount() <= 2)   return;
-
         _currentBullet = Instantiate(_bulletPrefabs, _firePoint);
+
+        _snake.ChangeCurrentSpeed(_snake._snakeSO.AimDecreaseSpeed);
+        _snake._canSpeedChange = false;
     }
 
     private void InputManager_OnAimCanceled()
@@ -86,17 +96,25 @@ public class HeadPart : SnakePart
         {
             StopCoroutine(_aimHoldCoroutine);
         }
-        
+
         _indicator.SetActive(false);
+
+        if(!_isAiming)  return;
+        _isAiming = false;
+        if(_currentBullet == null)  return;
 
         // shot
         _currentBullet.transform.SetParent(null);
         _currentBullet.Shoot(_aimDirection);
         _currentBullet = null;
+        
+        _snake.ChangeCurrentSpeed(_snake._snakeSO.Speed);
+        _snake._canSpeedChange = true;
     }
 
     private IEnumerator Coroutine_AimHold()
     {
+        _snake.DestroyLastBody();
         while(true)
         {
             if(_snake.GetCurrentBodyCount() <= 2)   break;
@@ -104,7 +122,7 @@ public class HeadPart : SnakePart
             _indicator.SetActive(true);
             yield return new WaitForSeconds(_partSO.BulletChargingTime);
 
-            _currentBullet.ChargeDamage++;
+            _currentBullet.ChargeDamage.HealNoLimit(1);
             _snake.DestroyLastBody();
         }
     }
@@ -117,7 +135,7 @@ public class HeadPart : SnakePart
 
     public override void HitByBullet(int damageAmount)
     {
-        
+        _snake.CreateBody();
     }
     #endregion
 

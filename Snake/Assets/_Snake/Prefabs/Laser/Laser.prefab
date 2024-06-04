@@ -35,7 +35,7 @@ Transform:
   - {fileID: 4015004884055077723}
   - {fileID: 2470275809698923155}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1236882489236803113
 MonoBehaviour:
@@ -54,7 +54,7 @@ MonoBehaviour:
   _lineRenderer: {fileID: 2489089177753759086}
   _laserHitLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   _startVFX: {fileID: 8351235846001929090}
   _endVFX: {fileID: 4015004884055077724}
 --- !u!120 &2489089177753759086

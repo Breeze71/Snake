@@ -12,6 +12,7 @@ public class SnakeSO : ScriptableObject
     public float Distance = .5f;
     public KeyCode AcclerateKey;
     public float shiftSpeed = 5f;
+    public float AimDecreaseSpeed = 1.5f;
     public float disableInputTime = .5f;
 
     private float horizontalInput;

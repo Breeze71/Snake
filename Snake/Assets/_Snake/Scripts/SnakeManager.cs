@@ -6,17 +6,18 @@ using UnityEngine;
 
 public class SnakeManager : MonoBehaviour
 {
-    [Expandable][SerializeField] private SnakeSO _snakeSO;
+    [Expandable]public SnakeSO _snakeSO;
 
     // body
     [SerializeField] private List<GameObject> _bodyPrefabs = new List<GameObject>();
     [ReadOnly] [SerializeField] private List<SnakePart> _snakePart = new List<SnakePart>();
-    [ReadOnly] public int _spawnAmount = 1;
+    public int _spawnAmount = 1;
     [SerializeField] private SnakePart _headPart;
     private float _distanceCount = 0f;
     private bool isSpawnCore = true;
 
     // move
+    [ReadOnly] public bool _canSpeedChange = true;
     private Rigidbody2D _headRB;
     private float _currentInputAngle;
     private float _currentSpeed;
@@ -27,6 +28,7 @@ public class SnakeManager : MonoBehaviour
     public HealthSystem SnakeHealth {get; private set;}
     private bool _isInvincible = false;
     private Coroutine _invincibleCoroutine;
+
 
     #region LC
     private void Awake() 
@@ -41,6 +43,8 @@ public class SnakeManager : MonoBehaviour
 
         _canMoveInput = true;
         _isInvincible = false;
+        _canSpeedChange = true;
+        _currentSpeed = _snakeSO.Speed;
     }
 
     private void FixedUpdate()
@@ -92,12 +96,13 @@ public class SnakeManager : MonoBehaviour
     private void HandleAcclerate()
     {
         if(!_canMoveInput) return;
+        if(!_canSpeedChange)    return;
 
-        if(Input.GetKey(_snakeSO.AcclerateKey))
+        if(Input.GetKeyDown(_snakeSO.AcclerateKey))
         {
             _currentSpeed = _snakeSO.shiftSpeed;
         }
-        else
+        else if(Input.GetKeyUp(_snakeSO.AcclerateKey))
         {
             _currentSpeed = _snakeSO.Speed;
         }
@@ -127,6 +132,10 @@ public class SnakeManager : MonoBehaviour
         _canMoveInput = false;
         yield return new WaitForSeconds(_snakeSO.disableInputTime);
         _canMoveInput = true;
+    }
+    public void ChangeCurrentSpeed(float speed)
+    {
+        _currentSpeed = speed;
     }
     #endregion
 

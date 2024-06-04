@@ -5,16 +5,22 @@ using UnityEngine;
 
 public class BulletChargeUI : MonoBehaviour
 {
-    [SerializeField] private SnakeBullet snakeBullet;
-    [SerializeField] private TextMeshPro chargeText;
-
-    private void OnEnable() 
+    [SerializeField] private SnakeBullet _snakeBullet;
+    [SerializeField] private TextMeshPro _chargeText;
+    
+    private void Start() 
     {
-        // chargeText = GetComponent<TextMeshPro>();
+        _snakeBullet.ChargeDamage.HealthChangedEvent += SnakeBullet_OnHealthChanged;
+        SnakeBullet_OnHealthChanged(_snakeBullet.ChargeDamage.GetHealthAmount());
     }
-    private void Update() 
+    private void OnDestroy() 
     {
-        chargeText.text = snakeBullet.ChargeDamage.ToString();
+        _snakeBullet.ChargeDamage.HealthChangedEvent -= SnakeBullet_OnHealthChanged;
+    }
+
+    private void SnakeBullet_OnHealthChanged(int currentHealth)
+    {
+        _chargeText.text = currentHealth.ToString();
     }
 
 }

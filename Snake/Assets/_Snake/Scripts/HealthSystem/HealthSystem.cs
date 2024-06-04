@@ -43,4 +43,11 @@ public class HealthSystem
 
         HealthChangedEvent?.Invoke(health);
     }
+
+    public void HealNoLimit(int _healthAmount)
+    {
+        health += _healthAmount;
+
+        HealthChangedEvent?.Invoke(health);        
+    }
 }
