@@ -48,13 +48,24 @@ public class HeadPart : SnakePart
     }
     #endregion
 
-    private void OnCollisionEnter2D(Collision2D other) {
+    // private void OnCollisionEnter2D(Collision2D other) 
+    // {
+    //     if((_partSO.ObstacleMask.value & (1 << other.gameObject.layer)) > 0)
+    //     {
+    //         _snake.MoveNegative();
+    //         Debug.Log(other.gameObject.name);
+    //         _snake.TakeDamage(_partSO.obstacleDamage);
+    //     }
+    // }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
         if((_partSO.ObstacleMask.value & (1 << other.gameObject.layer)) > 0)
         {
             _snake.MoveNegative();
             Debug.Log(other.gameObject.name);
             _snake.TakeDamage(_partSO.obstacleDamage);
-        }
+        }            
     }
     
 
