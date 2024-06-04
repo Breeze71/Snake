@@ -54,7 +54,7 @@ MonoBehaviour:
   _lineRenderer: {fileID: 4578078560463720416}
   _laserHitLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 448
   _startVFX: {fileID: 8351235846001929090}
   _endVFX: {fileID: 4015004884055077724}
 --- !u!120 &4578078560463720416
