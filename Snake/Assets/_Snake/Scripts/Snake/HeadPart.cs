@@ -69,7 +69,8 @@ public class HeadPart : SnakePart
         if(_snake.GetCurrentBodyCount() <= 2)   return;
         Debug.Log("BBB");
         _isAiming = true;
-
+        _indicator.SetActive(true);
+        
         if(_aimHoldCoroutine == null)
         {
             _aimHoldCoroutine = StartCoroutine(Coroutine_AimHold());
@@ -117,8 +118,6 @@ public class HeadPart : SnakePart
         while(true)
         {
             if(_snake.GetCurrentBodyCount() <= 2)   break;
-
-            _indicator.SetActive(true);
             yield return new WaitForSeconds(_partSO.BulletChargingTime);
 
             _currentBullet.ChargeDamage.HealNoLimit(1);
