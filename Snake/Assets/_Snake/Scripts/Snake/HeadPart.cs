@@ -70,6 +70,7 @@ public class HeadPart : SnakePart
         Debug.Log("BBB");
         _isAiming = true;
         _indicator.SetActive(true);
+        _snake.SetBodyDisable();
         
         if(_aimHoldCoroutine == null)
         {
@@ -98,6 +99,7 @@ public class HeadPart : SnakePart
         }
 
         _indicator.SetActive(false);
+        _snake.SetBodyEnable();
 
         if(!_isAiming)  return;
         _isAiming = false;

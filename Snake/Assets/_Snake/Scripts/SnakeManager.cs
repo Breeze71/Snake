@@ -222,6 +222,22 @@ public class SnakeManager : MonoBehaviour
         return _snakePart.Count;
     }
 
+    public void SetBodyEnable()
+    {
+        for(int i = _snakePart.Count - 1; i >= 2; i--)
+        {
+            _snakePart[i].gameObject.SetActive(true);
+        }
+    }
+
+    public void SetBodyDisable()
+    {
+        for(int i = _snakePart.Count - 1; i >= 2; i--)
+        {
+            _snakePart[i].gameObject.SetActive(false);
+        }
+    }
+
     [Button]
     private void TestDestroy()
     {
