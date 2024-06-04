@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bullet_TLB
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 16037630
+  uniqueIndex: 10563009
   profile: {fileID: 11400000}
   parent: {fileID: 1370101560344970981}
   children: []
@@ -7507,7 +7507,7 @@ MonoBehaviour:
   m_Name: Shot_TRU
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 3107256
+  uniqueIndex: 12705665
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -12055,7 +12055,7 @@ MonoBehaviour:
   m_Name: Shot_TRB
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 2205618
+  uniqueIndex: 15162136
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -16603,7 +16603,7 @@ MonoBehaviour:
   m_Name: Bullet_TLB 0
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 16409699
+  uniqueIndex: 7523754
   profile: {fileID: 11400000}
   parent: {fileID: -3868921318318618735}
   children: []
@@ -24134,7 +24134,7 @@ MonoBehaviour:
   m_Name: Bullet_TLU
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 9657923
+  uniqueIndex: 8944509
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children: []
@@ -31628,7 +31628,7 @@ MonoBehaviour:
   m_Name: Shot_TLU
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 10563206
+  uniqueIndex: 14209357
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -36176,7 +36176,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 6600374
+  uniqueIndex: 14434897
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -43292,7 +43292,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 11757506
+  uniqueIndex: 5886289
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:
@@ -97174,7 +97174,7 @@ MonoBehaviour:
   m_Name: Bullet_TLB 0 0
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 13658483
+  uniqueIndex: 2114347
   profile: {fileID: 11400000}
   parent: {fileID: -558194626466239409}
   children: []
@@ -104668,7 +104668,7 @@ MonoBehaviour:
   m_Name: Shot_TLB
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 9973376
+  uniqueIndex: 3707767
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
