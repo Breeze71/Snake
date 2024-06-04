@@ -18,10 +18,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<int> _bossStateHealths = new List<int>();
     private int currentBossHealth = 0;
 
+    private LevelEmitterController levelEmitterController;
+
     #region Lc
     private void Awake() 
     {
-        _bossBlocks = _blocksParents.GetComponentsInChildren<BossBlock>().ToList<BossBlock>();    
+        _bossBlocks = _blocksParents.GetComponentsInChildren<BossBlock>().ToList<BossBlock>();
+        levelEmitterController = FindObjectOfType<LevelEmitterController>();
     }
 
     private void Start()
@@ -72,7 +75,11 @@ public class GameManager : MonoBehaviour
                 CurrentState = i;
                 break;
             }
-        }        
+        }  
+        if (levelEmitterController != null)
+        {
+            levelEmitterController.ChangeToStage(CurrentState);
+        }
     }
 }
 }

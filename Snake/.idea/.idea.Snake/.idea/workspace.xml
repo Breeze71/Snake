@@ -6,21 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="fc5e12f9-6dcb-46ec-a073-a6ffd09b7fd8" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Snake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_世界旋转型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_世界旋转型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_分叉型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_分叉型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_发停发型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_发停发型.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_变速.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_变速.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_斜飞型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_斜飞型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_波浪型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_波浪型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_游走型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_游走型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_直飞型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_直飞型.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_缺口型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_缺口型.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_自身旋转型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_自身旋转型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_追踪型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_追踪型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_逐个出现型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_逐个出现型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Level_0/Base_逐个出现型_BU.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Level_0/Base_逐个出现型_BU.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/废弃Base_弹跳型 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/废弃Base_弹跳型 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Scripts/LevelEmitterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Scripts/LevelEmitterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/GameFlow/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/GameFlow/Level_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Scenes/SnakeBehaviour.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Scenes/SnakeBehaviour.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Scripts/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +40,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "LevelProcess",
+    "git-widget-placeholder": "Dev",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
