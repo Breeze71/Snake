@@ -7163,7 +7163,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 4473629
+  uniqueIndex: 8479766
   profile: {fileID: 11400000}
   parent: {fileID: 114980266748472528}
   children:
@@ -29127,7 +29127,7 @@ MonoBehaviour:
   m_Name: Small Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 13589297
+  uniqueIndex: 14637299
   profile: {fileID: 11400000}
   parent: {fileID: 114367796061083068}
   children:
@@ -33825,7 +33825,7 @@ MonoBehaviour:
   m_Name: Small bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 6048266
+  uniqueIndex: 2631122
   profile: {fileID: 11400000}
   parent: {fileID: 114396195577588526}
   children: []
@@ -42137,7 +42137,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 5985348
+  uniqueIndex: 758128
   profile: {fileID: 11400000}
   parent: {fileID: 114281247847933564}
   children:

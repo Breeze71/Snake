@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 6
   RotationSpeed: 180
-  Distance: 0.1
+  Distance: 0.05
   AcclerateKey: 304
   shiftSpeed: 10
   AimDecreaseSpeed: 1.5
