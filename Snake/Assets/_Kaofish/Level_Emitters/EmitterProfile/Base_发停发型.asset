@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 4695853
+  uniqueIndex: 4038391
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -7651,7 +7651,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 12986115
+  uniqueIndex: 12909692
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -10109,7 +10109,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 14557696
+  uniqueIndex: 10239466
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -17225,7 +17225,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 15775024
+  uniqueIndex: 11212791
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:
@@ -41500,7 +41500,7 @@ MonoBehaviour:
   m_Name: TailBullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 7425431
+  uniqueIndex: 6885145
   profile: {fileID: 11400000}
   parent: {fileID: 8091452201488721126}
   children: []
@@ -48786,7 +48786,7 @@ MonoBehaviour:
   m_Name: TailShoot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 6097423
+  uniqueIndex: 6107122
   profile: {fileID: 11400000}
   parent: {fileID: 8193586438859675633}
   children:
@@ -55592,7 +55592,7 @@ MonoBehaviour:
   m_Name: TailPattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 12126213
+  uniqueIndex: 15244055
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children:
