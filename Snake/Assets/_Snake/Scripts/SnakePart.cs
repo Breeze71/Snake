@@ -10,13 +10,15 @@ public abstract class SnakePart : MonoBehaviour
     [Expandable][SerializeField] protected SnakePartSO _partSO;
 
     [SerializeField] protected SnakeManager _snake;
+    public GameObject Indicator;
+    public bool IsAimimg;
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         _snake = GetComponentInParent<SnakeManager>();
     }
 
-    private void FixedUpdate() 
+    protected virtual void FixedUpdate() 
     {
         StoreHistoryInfo();
     }
@@ -34,4 +36,14 @@ public abstract class SnakePart : MonoBehaviour
 
     public abstract void HitByLaser(int damageAmount);
     public abstract void HitByBullet(int damageAmount);
+
+    public virtual void SetAiming()
+    {
+
+    }
+
+    public virtual void SetNotAim()
+    {
+
+    }
 }

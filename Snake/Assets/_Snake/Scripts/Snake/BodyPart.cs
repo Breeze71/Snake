@@ -6,12 +6,32 @@ public class BodyPart : SnakePart
 {
     public override void HitByLaser(int damageAmount)
     {
+        if(IsAimimg)   return;
+
         _snake.DestroyBodyAndAfter(partIndex);
     }
 
     public override void HitByBullet(int damageAmount)
     {
+        if(IsAimimg)   return;
+        
         _snake.DestroyLastBody();
+    }
+
+    public override void SetAiming()
+    {
+        base.SetAiming();
+        
+                GetComponentInChildren<SpriteRenderer>().enabled = false;
+        IsAimimg = true;    
+    }
+
+    public override void SetNotAim()
+    {
+        base.SetNotAim();
+
+                GetComponentInChildren<SpriteRenderer>().enabled = true;
+        IsAimimg = false;      
     }
 }
 

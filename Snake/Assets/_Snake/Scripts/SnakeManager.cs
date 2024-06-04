@@ -18,7 +18,7 @@ public class SnakeManager : MonoBehaviour
 
     // move
     [ReadOnly] public bool _canSpeedChange = true;
-    private Rigidbody2D _headRB;
+    public Rigidbody2D HeadRB;
     private float _currentInputAngle;
     private float _currentSpeed;
     private bool _canMoveInput = true;
@@ -28,6 +28,9 @@ public class SnakeManager : MonoBehaviour
     public HealthSystem SnakeHealth {get; private set;}
     private bool _isInvincible = false;
     private Coroutine _invincibleCoroutine;
+
+    // 
+    public GameObject Indicator;
 
 
     #region LC
@@ -39,7 +42,7 @@ public class SnakeManager : MonoBehaviour
     {
         SpawnSnake();
 
-        _headRB = _headPart.GetComponent<Rigidbody2D>();
+        HeadRB = _headPart.GetComponent<Rigidbody2D>();
 
         _canMoveInput = true;
         _isInvincible = false;
@@ -52,19 +55,19 @@ public class SnakeManager : MonoBehaviour
         MoveSnake();    
         RotateSnake();
         FollowHead();
-    }
 
-    private void Update() 
-    {
         if(_spawnAmount > 0)
         {
             CreateSnakePart();
         }
+    }
 
+    private void Update() 
+    {
         HandleAcclerate();
     }
     #endregion
-    
+
     #region Init
     private void SpawnSnake()
     {
@@ -76,7 +79,7 @@ public class SnakeManager : MonoBehaviour
     #region Head Movement
     private void MoveSnake()
     {
-        _headRB.velocity = _snakePart[0].transform.right * _currentSpeed;
+        HeadRB.velocity = _snakePart[0].transform.right * _currentSpeed;
     }
     private void RotateSnake()
     {
@@ -184,6 +187,7 @@ public class SnakeManager : MonoBehaviour
             // 只生成一次 core
             if(isSpawnCore)
             {
+                bodyPart.Indicator = Indicator;
                 _bodyPrefabs.RemoveAt(1);
                 isSpawnCore = false;
             }
@@ -224,17 +228,19 @@ public class SnakeManager : MonoBehaviour
 
     public void SetBodyEnable()
     {
+        _snakePart[0].SetNotAim();
         for(int i = _snakePart.Count - 1; i >= 2; i--)
         {
-            _snakePart[i].gameObject.SetActive(true);
+            _snakePart[i].SetNotAim();
         }
     }
 
     public void SetBodyDisable()
     {
+        _snakePart[0].SetAiming();
         for(int i = _snakePart.Count - 1; i >= 2; i--)
         {
-            _snakePart[i].gameObject.SetActive(false);
+            _snakePart[i].SetAiming();
         }
     }
 
@@ -254,7 +260,10 @@ public class SnakeManager : MonoBehaviour
     {
         if(_isInvincible)   return;
 
-        StartInvincible();
+        if(damage > 0)
+        {
+            StartInvincible();
+        }
         SnakeHealth.TakeDamage(damage);
     }
 
