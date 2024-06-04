@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using NaughtyAttributes;
 using UnityEngine;
-
+namespace V
+{
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance{get; private set;} 
+
+    public int CurrentState;
+
     [SerializeField] private SnakeManager _snake;
     [SerializeField] private GameObject _blocksParents;
     [ReadOnly] [SerializeField] private List<BossBlock> _bossBlocks;
 
-    [ReadOnly] [SerializeField] private int currentBossHealth = 0;
+    [SerializeField] private List<int> _bossStateHealths = new List<int>();
+    private int currentBossHealth = 0;
 
+    #region Lc
     private void Awake() 
     {
         _bossBlocks = _blocksParents.GetComponentsInChildren<BossBlock>().ToList<BossBlock>();    
@@ -26,6 +33,8 @@ public class GameManager : MonoBehaviour
 
             currentBossHealth += bossHealth.Health.GetHealthAmount();
         }
+
+        CheckCurrentState();
     }
 
     private void OnDestroy()
@@ -36,6 +45,7 @@ public class GameManager : MonoBehaviour
             bossHealth.Health.HealthChangedEvent -= BossHealth_OnHealthChanged;
         }
     }
+    #endregion
 
     private void Snake_OnHealthChanged(int currentHealth)
     {
@@ -50,6 +60,19 @@ public class GameManager : MonoBehaviour
         currentBossHealth--;
 
         Debug.Log("current boss health" + currentBossHealth);
-        // wave
+        CheckCurrentState();
     }
+
+    private void CheckCurrentState()
+    {
+        for(int i = _bossStateHealths.Count - 1; i > 0; i--)
+        {
+            if(currentBossHealth <= _bossStateHealths[i])
+            {
+                CurrentState = i;
+                break;
+            }
+        }        
+    }
+}
 }

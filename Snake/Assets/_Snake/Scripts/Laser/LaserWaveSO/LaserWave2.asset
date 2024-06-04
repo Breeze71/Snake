@@ -15,3 +15,5 @@ MonoBehaviour:
   _spawnCountDown: 1
   LaserInfos:
   - {fileID: 11400000, guid: be11f41d90dc3514e8bf4a6d10c96c75, type: 2}
+  - {fileID: 11400000, guid: be11f41d90dc3514e8bf4a6d10c96c75, type: 2}
+  - {fileID: 11400000, guid: be11f41d90dc3514e8bf4a6d10c96c75, type: 2}
