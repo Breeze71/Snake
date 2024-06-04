@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SnakeSO")]
+[CreateAssetMenu(fileName = "Snake", menuName = "Snake / Snake Move")]
 public class SnakeSO : ScriptableObject
 {
+    // move
+    [Header("Move")]
     public float Speed = 2f;
     public float RotationSpeed = 180f;
     public float Distance = .5f;
     public KeyCode AcclerateKey;
     public float shiftSpeed = 5f;
+    public float AimDecreaseSpeed = 1.5f;
+    public float disableInputTime = .5f;
 
     private float horizontalInput;
     private float verticalInput;
+
+    // health
+    [Header("Health")]
+    public int HealthAmount;
+    public float InvincibleTime = .5f;
 
     public Vector2 HandleMoveDirection()
     {

@@ -52,6 +52,7 @@ public class LaserController : MonoBehaviour
         if(hitPos)
         {
             _lineRenderer.SetPosition(1 , hitPos.point);
+            Damage(hitPos);
         }
         else
         {
@@ -59,6 +60,15 @@ public class LaserController : MonoBehaviour
         }
 
         _endVFX.transform.position = _lineRenderer.GetPosition(1);      
+    }
+
+    private void Damage(RaycastHit2D hit2D)
+    {
+        SnakePart part; 
+        if(hit2D.collider.TryGetComponent(out part))
+        {
+            part.HitByLaser(1);
+        }
     }
 
     private void SetupParticleList()
