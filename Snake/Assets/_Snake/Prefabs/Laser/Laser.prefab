@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2765218876509366643}
   - component: {fileID: 1236882489236803113}
-  - component: {fileID: 2489089177753759086}
+  - component: {fileID: 4578078560463720416}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -35,7 +35,7 @@ Transform:
   - {fileID: 4015004884055077723}
   - {fileID: 2470275809698923155}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1236882489236803113
 MonoBehaviour:
@@ -51,13 +51,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startPoint: {fileID: 8562501248076544941}
   _endPoint: {fileID: 2470275809698923155}
-  _lineRenderer: {fileID: 2489089177753759086}
+  _lineRenderer: {fileID: 4578078560463720416}
   _laserHitLayer:
     serializedVersion: 2
     m_Bits: 64
   _startVFX: {fileID: 8351235846001929090}
   _endVFX: {fileID: 4015004884055077724}
---- !u!120 &2489089177753759086
+--- !u!120 &4578078560463720416
 LineRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3071516239544324719}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.33, y: 4.61, z: 0}
+  m_LocalPosition: {x: -3.12, y: 0.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -216,7 +216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9132258213329284701}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.35, y: -3.85, z: 0}
+  m_LocalPosition: {x: 2.97, y: -4.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
