@@ -18,6 +18,6 @@ MonoBehaviour:
   AcclerateKey: 304
   shiftSpeed: 10
   AimDecreaseSpeed: 1.5
-  disableInputTime: 0.5
+  disableInputTime: 0.1
   HealthAmount: 5
   InvincibleTime: 0.5
