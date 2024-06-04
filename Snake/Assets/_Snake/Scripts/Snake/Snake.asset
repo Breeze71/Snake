@@ -15,3 +15,6 @@ MonoBehaviour:
   ObstacleMask:
     serializedVersion: 2
     m_Bits: 384
+  obstacleDamage: 0
+  BulletChargingTime: 0.3
+  BulletDamage: 1

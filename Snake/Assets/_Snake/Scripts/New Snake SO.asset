@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf4ea46cb98b374d8422aa92f5464d2, type: 3}
   m_Name: New Snake SO
   m_EditorClassIdentifier: 
-  Speed: 2
+  Speed: 6
   RotationSpeed: 180
-  Distance: 0.5
+  Distance: 0.1
   AcclerateKey: 304
-  shiftSpeed: 4
-  disableInputTime: 0.2
+  shiftSpeed: 10
+  AimDecreaseSpeed: 1.5
+  disableInputTime: 0.5
   HealthAmount: 5
   InvincibleTime: 0.5
