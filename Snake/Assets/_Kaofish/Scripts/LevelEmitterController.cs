@@ -13,6 +13,11 @@ public class SingleEmitter
 
     public void ChangeProfile()
     {
+        if (BulletEmitter == null || EmitterProfile == null)
+        {
+            Debug.LogWarning("BulletEmitter or EmitterProfile is not set!");
+            return;
+        }
         BulletEmitter.emitterProfile = EmitterProfile;
         BulletEmitter.Play();
     }
@@ -21,19 +26,28 @@ public class SingleEmitter
 public class StageConfiguration
 {
     public int WaveNumber;
-    [SerializeField]
-    public List<SingleEmitter> SingleEmitters;
+    public List<SingleEmitter> SingleEmitters=new List<SingleEmitter>();
 }
 public class LevelEmitterController : MonoBehaviour
 {
     private bool _ifFirst = true;
-    public List<StageConfiguration> StageConfigurations;
+    public List<StageConfiguration> StageConfigurations=new List<StageConfiguration>();
     private int _nowStage = 0;
     private void ClosePreviousEmitters()
     {
-        foreach (var singleEmitter in StageConfigurations[_nowStage].SingleEmitters)
+        if (_nowStage == 0)
         {
-            singleEmitter.BulletEmitter.Kill();
+            foreach (var singleEmitter in StageConfigurations[_nowStage].SingleEmitters)
+            {
+                singleEmitter.BulletEmitter.Kill();
+            }
+        }
+        else
+        {
+            foreach (var singleEmitter in StageConfigurations[_nowStage-1].SingleEmitters)
+            {
+                singleEmitter.BulletEmitter.Kill();
+            }
         }
     }
 
@@ -60,10 +74,12 @@ public class LevelEmitterController : MonoBehaviour
         }
         else if (_nowStage + 1 < StageConfigurations.Count)
         {
-            ChangeToStage(_nowStage+1);
+            _nowStage += 1;
+            ChangeToStage(_nowStage);
         }
         else
         {
+            _nowStage = 0;
             ChangeToStage(0);
         }
     }

@@ -18,16 +18,9 @@
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_自身旋转型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_自身旋转型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_追踪型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_追踪型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_逐个出现型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Base_逐个出现型.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Death.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Death.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/TB_Snake.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/TB_Snake.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/TL_BU_D_3_Split4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/TL_BU_D_3_Split4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/TL_BU_D_5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/TL_BU_D_5.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/TL_DNAShot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/TL_DNAShot.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/TR_UB_D_5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/TR_UB_D_5.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Level_0/Base_逐个出现型_BU.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Level_0/Base_逐个出现型_BU.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/废弃Base_弹跳型 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/废弃Base_弹跳型 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/GameFlow/Level_0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/GameFlow/Level_0.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Prefabs/Laser/Laser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Prefabs/Laser/Laser.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Scenes/LaserGenerator.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Scenes/LaserGenerator.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Scripts/LevelEmitterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Scripts/LevelEmitterController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +48,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CodeLensConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -113,7 +107,7 @@
       <updated>1717156219639</updated>
       <workItem from="1717156221974" duration="1590000" />
       <workItem from="1717232643769" duration="5609000" />
-      <workItem from="1717480689203" duration="1364000" />
+      <workItem from="1717480689203" duration="6168000" />
     </task>
     <servers />
   </component>
