@@ -11,7 +11,7 @@ public class BodyPart : SnakePart
 
     public override void HitByBullet(int damageAmount)
     {
-        
+        _snake.DestroyLastBody();
     }
 }
 

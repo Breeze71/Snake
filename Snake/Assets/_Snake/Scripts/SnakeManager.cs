@@ -116,6 +116,7 @@ public class SnakeManager : MonoBehaviour
         _currentInputAngle = _currentInputAngle - 180f;
         
         _snakePart[0].transform.eulerAngles = new Vector3(0, 0, _currentInputAngle);
+        //Debug.Log("aaaa");
     }
     private void StartDisableInput()
     {
@@ -254,7 +255,7 @@ public class SnakeManager : MonoBehaviour
 
     private IEnumerator Coroutine_Invincible()
     {
-        MoveNegative();
+        //MoveNegative();
         _isInvincible = true;
         yield return new WaitForSeconds(_snakeSO.InvincibleTime);
         _isInvincible = false;

@@ -12,7 +12,7 @@ public class CorePart : SnakePart
 
     public override void HitByBullet(int damageAmount)
     {
-        
+        _snake.TakeDamage(damageAmount);
     }
 }
 

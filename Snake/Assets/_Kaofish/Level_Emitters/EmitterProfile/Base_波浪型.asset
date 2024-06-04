@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 10089219
+  uniqueIndex: 7423371
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -20035,7 +20035,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 2284153
+  uniqueIndex: 12597613
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:
@@ -44310,7 +44310,7 @@ MonoBehaviour:
   m_Name: SelfPattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 9232391
+  uniqueIndex: 10649846
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children: []

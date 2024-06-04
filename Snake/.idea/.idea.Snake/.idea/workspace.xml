@@ -17,8 +17,11 @@
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Level_0/Base_逐个出现型_BU.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/Level_0/Base_逐个出现型_BU.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/废弃Base_弹跳型 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/EmitterProfile/废弃Base_弹跳型 1.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/GameFlow/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Level_Emitters/GameFlow/Level_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Scenes/SnakeBehaviour.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Scenes/SnakeBehaviour.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Prefabs/Snake/Body.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Prefabs/Snake/Body.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Scripts/Snake/BodyPart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Scripts/Snake/BodyPart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Scripts/Snake/CorePart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Scripts/Snake/CorePart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Scripts/Snake/HeadPart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Scripts/Snake/HeadPart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Scripts/SnakeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Scripts/SnakeManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -49,16 +49,14 @@ public class HeadPart : SnakePart
     #endregion
 
     private void OnCollisionEnter2D(Collision2D other) {
-        
-    }
-    private void OnTriggerEnter2D(Collider2D other) 
-    {
         if((_partSO.ObstacleMask.value & (1 << other.gameObject.layer)) > 0)
         {
             _snake.MoveNegative();
+            Debug.Log(other.gameObject.name);
             _snake.TakeDamage(_partSO.obstacleDamage);
         }
     }
+    
 
     private void InputManager_OnAimDirection(Vector2 aimDir)
     {
@@ -69,7 +67,7 @@ public class HeadPart : SnakePart
     private void InputManager_OnAim()
     {
         if(_snake.GetCurrentBodyCount() <= 2)   return;
-
+        Debug.Log("BBB");
         _isAiming = true;
 
         if(_aimHoldCoroutine == null)
@@ -81,6 +79,7 @@ public class HeadPart : SnakePart
             StopCoroutine(_aimHoldCoroutine);
             _aimHoldCoroutine = StartCoroutine(Coroutine_AimHold());            
         }
+        Debug.Log("AAAA");
 
         _aimDirection = _rb.velocity;
 
