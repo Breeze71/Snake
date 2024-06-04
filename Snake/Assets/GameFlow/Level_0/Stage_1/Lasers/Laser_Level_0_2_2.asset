@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788633101efd55546a7ed1a3999f616b, type: 3}
+  m_Name: Laser_Level_0_2_2
+  m_EditorClassIdentifier: 
+  _spawnCountDown: 1
+  LaserInfos:
+  - {fileID: 11400000, guid: 106579d2dc7a2844795c676da78513ce, type: 2}
+  - {fileID: 11400000, guid: 13a0559bcc69ff046bc2e3ac3bf577e2, type: 2}
+  - {fileID: 11400000, guid: 7ec0a6ee0111d2648b554489fe244782, type: 2}

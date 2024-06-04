@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 1621562
+  uniqueIndex: 492771
   profile: {fileID: 11400000}
   parent: {fileID: 114184213563873034}
   children:
@@ -2462,7 +2462,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 1945168
+  uniqueIndex: 13505135
   profile: {fileID: 11400000}
   parent: {fileID: 114334976902514986}
   children:
@@ -22221,7 +22221,7 @@ MonoBehaviour:
             parameterType: 0
             relativeTo: 0
             parameterName: 
-          defaultValue: 0.4
+          defaultValue: 0.5
         useSlider: 0
         sliderMin: 0
         sliderMax: 0
@@ -31765,7 +31765,7 @@ MonoBehaviour:
   advancedFoldout: 1
   hasBeenSerializedOnce: 1
   focusedInstruction: -1
-  safetyForPlaymode: 48
+  safetyForPlaymode: 49
 --- !u!114 &114334976902514986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31779,7 +31779,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 15988532
+  uniqueIndex: 5667947
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -38895,7 +38895,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 208312
+  uniqueIndex: 8680335
   profile: {fileID: 11400000}
   parent: {fileID: 114043142638459942}
   children: []
@@ -40414,7 +40414,7 @@ MonoBehaviour:
       unless: 0
       canceller: 0
     onBulletDeath:
-      enabled: 1
+      enabled: 0
       behaviour: 0
       unless: 0
       canceller: 0
@@ -41559,7 +41559,7 @@ MonoBehaviour:
         parameterType: 0
         relativeTo: 0
         parameterName: 
-      defaultValue: 0.1
+      defaultValue: 3
     useSlider: 0
     sliderMin: 0
     sliderMax: 0
@@ -41680,11 +41680,11 @@ MonoBehaviour:
   collisionTags:
     tagList: 1
   colliders:
-  - colliderType: 0
-    size: 1.5
+  - colliderType: 1
+    size: 0.1
     offset: {x: 0, y: 0, z: 0}
-    lineStart: {x: 0, y: 0}
-    lineEnd: {x: 0, y: 0}
+    lineStart: {x: -0.12, y: 0}
+    lineEnd: {x: 0.12, y: 0}
   dieOnCollision: 1
   deathTiming: 0
   maxSimultaneousCollisionsPerFrame: 1
@@ -42488,7 +42488,7 @@ MonoBehaviour:
         parameterType: 0
         relativeTo: 0
         parameterName: 
-      defaultValue: 5
+      defaultValue: 8
     useSlider: 0
     sliderMin: 0
     sliderMax: 0
@@ -46501,5 +46501,5 @@ MonoBehaviour:
       requiredComponentName: 
   preview:
     collidersTex: {fileID: 0}
-    sprite: {fileID: 21300000, guid: 654dd63921adbcb4fb04985d43c34542, type: 3}
+    sprite: {fileID: 1310432050, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
     gizmoColor: {r: 0, g: 0, b: 0.5, a: 1}

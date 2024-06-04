@@ -151,8 +151,9 @@ MonoBehaviour:
   SnakeInfos: []
   _partSO: {fileID: 11400000, guid: 28a08c6b72c2a704c9d4be64873de611, type: 2}
   _snake: {fileID: 0}
+  Indicator: {fileID: 0}
+  IsAimimg: 0
   _bulletPrefabs: {fileID: 5284682937015976239, guid: 3e4598a21b406984cbd59063f8bbf975, type: 3}
-  _indicator: {fileID: 0}
   _firePoint: {fileID: 3479823341134286726}
 --- !u!114 &-1756344441642414745
 MonoBehaviour:
@@ -172,7 +173,7 @@ MonoBehaviour:
   syncEnable: 1
   syncDisable: 1
   syncCollisionTags: 1
-  hitboxSize: 0.5
+  hitboxSize: 0.48
   hitboxOffset: {x: 0, y: 0}
   killBulletOnCollision: 1
   maxSimultaneousCollisionsPerFrame: 1
