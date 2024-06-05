@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bullet 0 0 (From 0_1Stage) 0
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 8580590
+  uniqueIndex: 10728532
   profile: {fileID: 11400000}
   parent: {fileID: 1612843634766365647}
   children: []
@@ -9010,7 +9010,7 @@ MonoBehaviour:
   m_Name: "Shot_TLU (From Base_\u659C\u98DE\u578B) 0 0"
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 12622239
+  uniqueIndex: 16761994
   profile: {fileID: 11400000}
   parent: {fileID: 114676994745875216}
   children:
@@ -22355,7 +22355,7 @@ MonoBehaviour:
   foldoutExport: 0
   foldoutEmptyBin: 1
   foldoutCompactMode: 0
-  currentParamsSelected: {fileID: 114676994745875216}
+  currentParamsSelected: {fileID: 2635401184640825254}
   numberOfSubAssets: 13
 --- !u!114 &114676994745875216
 MonoBehaviour:
@@ -22370,7 +22370,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 8288620
+  uniqueIndex: 8797681
   profile: {fileID: 11400000}
   parent: {fileID: 114964359049590580}
   children:
@@ -47387,7 +47387,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 2245081
+  uniqueIndex: 14260358
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -54503,7 +54503,7 @@ MonoBehaviour:
   m_Name: "Shot_TLU (From Base_\u659C\u98DE\u578B) 0"
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 5870609
+  uniqueIndex: 7815805
   profile: {fileID: 11400000}
   parent: {fileID: 114676994745875216}
   children:
@@ -65657,7 +65657,7 @@ MonoBehaviour:
   m_Name: Bullet 0 0 (From 0_1Stage) 0 0
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 994059
+  uniqueIndex: 12510643
   profile: {fileID: 11400000}
   parent: {fileID: 4372988045360965812}
   children: []
@@ -68850,7 +68850,7 @@ MonoBehaviour:
   foldoutVFX: 1
   hideSpriteList: 0
   vfxOpened: 0
-  currentlyDisplayedModule: 3
+  currentlyDisplayedModule: 0
   canMove: 1
   canCollide: 1
   isVisible: 1
@@ -74654,7 +74654,7 @@ MonoBehaviour:
   m_Name: ShotLaser
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 13477113
+  uniqueIndex: 14954329
   profile: {fileID: 11400000}
   parent: {fileID: 114676994745875216}
   children:
@@ -77072,7 +77072,7 @@ MonoBehaviour:
   m_Name: Bullet 0 0 (From 0_1Stage) 0 2
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 1544204
+  uniqueIndex: 6909631
   profile: {fileID: 11400000}
   parent: {fileID: 6788505851443323053}
   children: []
@@ -86069,7 +86069,7 @@ MonoBehaviour:
   m_Name: "Shot_TLU (From Base_\u659C\u98DE\u578B) 1"
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 16542708
+  uniqueIndex: 16710367
   profile: {fileID: 11400000}
   parent: {fileID: 114676994745875216}
   children:
@@ -97223,7 +97223,7 @@ MonoBehaviour:
   m_Name: Bullet 0 0 (From 1_1Stage) 0 0
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 7220075
+  uniqueIndex: 7506782
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
@@ -106220,7 +106220,7 @@ MonoBehaviour:
   m_Name: LaserTrigger
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 665264
+  uniqueIndex: 297651
   profile: {fileID: 11400000}
   parent: {fileID: 2581316708231056747}
   children: []
@@ -113495,7 +113495,7 @@ MonoBehaviour:
   m_Name: "Shot_TLU (From Base_\u659C\u98DE\u578B) 0 1"
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 6255170
+  uniqueIndex: 5960841
   profile: {fileID: 11400000}
   parent: {fileID: 114676994745875216}
   children:
@@ -124649,7 +124649,7 @@ MonoBehaviour:
   m_Name: Bullet 0 0 (From 0_1Stage) 0 1
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 11517610
+  uniqueIndex: 3405073
   profile: {fileID: 11400000}
   parent: {fileID: -1426714053535899035}
   children: []
