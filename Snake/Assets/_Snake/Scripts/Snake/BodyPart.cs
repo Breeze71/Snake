@@ -7,6 +7,7 @@ public class BodyPart : SnakePart
     public override void HitByLaser(int damageAmount)
     {
         if(IsAimimg)   return;
+        if(_snake.IsPause) return;
 
         _snake.DestroyBodyAndAfter(partIndex);
     }
@@ -14,6 +15,7 @@ public class BodyPart : SnakePart
     public override void HitByBullet(int damageAmount)
     {
         if(IsAimimg)   return;
+        if(_snake.IsPause) return;
         
         _snake.DestroyLastBody();
     }

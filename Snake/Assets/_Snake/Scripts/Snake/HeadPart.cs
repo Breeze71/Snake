@@ -20,7 +20,6 @@ public class HeadPart : SnakePart
         if((_partSO.ObstacleMask.value & (1 << other.gameObject.layer)) > 0)
         {
             _snake.MoveNegative();
-            Debug.Log(other.gameObject.name);
             _snake.TakeDamage(_partSO.obstacleDamage);
         }
     }
@@ -28,12 +27,15 @@ public class HeadPart : SnakePart
     #region Take Damage
     public override void HitByLaser(int damageAmount)
     {
+        if(_snake.IsPause)  return;
+
         _snake.TakeDamage(damageAmount);
     }
 
     public override void HitByBullet(int damageAmount)
     {
         if(IsAimimg)    return;
+        if(_snake.IsPause) return;
 
         _snake.CreateBody();
     }

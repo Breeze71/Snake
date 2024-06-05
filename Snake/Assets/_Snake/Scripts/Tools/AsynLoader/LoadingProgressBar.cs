@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace V.Tool.AsyncLoader
+namespace V.Tool
 {
     public class LoadingProgressBar : MonoBehaviour
     {

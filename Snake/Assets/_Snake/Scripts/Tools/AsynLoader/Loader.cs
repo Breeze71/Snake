@@ -2,29 +2,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 
-namespace V.Tool.AsyncLoader
+namespace V.Tool
 {
-
     public enum Scene
     {   
         MainMenu,
-        ForeWord,
-        SelectGameScene,
         LoadingScene,
-        Chapter1_1,
-        Chapter1_3,
-        Chapter1_4,
-        Chapter1_5,
-        Chapter2,
-        Chapter2_1,
-        Chapter3_1,
-        Chapter3_2,
-        Chapter3_3,
-        Chapter3_4,
-        Chapter4_1,
-        Chapter4_2,
-        Chapter5_1,
-        Chapter5_2,
+        UI,
     }
 
     public static class Loader

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace V.Tool.AsyncLoader
+namespace V.Tool
 {
     public class LoaderCallback : MonoBehaviour
     {

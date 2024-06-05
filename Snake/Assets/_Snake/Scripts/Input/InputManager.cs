@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
+using V.UI;
 
 namespace V
 {
@@ -17,10 +18,11 @@ namespace V
         public static InputManager Instance {get; private set;} 
 
         private PlayerInput _playerInput;
+        [SerializeField] private InputType _startInputType;
     
         public event Action<Vector2> MoveEvent;
-        public event Action JumpEvent;
-        public event Action JumpCanceledEvent;
+        public event Action AcclerateEvent;
+        public event Action AcclerateCanceledEvent;
 
         public event Action PauseEvent;
         public event Action ResumeEvent;
@@ -30,6 +32,12 @@ namespace V
         public event Action AimEvent;
         public event Action AimCanceledEvent;
         public event Action<Vector2> AimDirectionEvent;
+
+        #region Input Value
+        public Vector2 NavigationInput {get; set;}
+        public event Action OnSubmitEvent; // Any Key
+        public event Action OnConfirmEvent; // Enter
+        #endregion
 
         #region LC
         private void Awake() 
@@ -57,7 +65,7 @@ namespace V
 
         private void Start() 
         {    
-            SetActionMap(InputType.GamePlay);
+            SetActionMap(_startInputType);
         }
 
         private void OnDisable() 
@@ -66,7 +74,7 @@ namespace V
         }
         #endregion
 
-        private void SetActionMap(InputType inputType)
+        public void SetActionMap(InputType inputType)
         {
             foreach(InputActionMap inputMap in _playerInput.asset.actionMaps)
             {
@@ -85,19 +93,20 @@ namespace V
         #region GamePlay
         public void OnMove(InputAction.CallbackContext context)
         {
-            // MoveEvent?.Invoke(context.ReadValue<Vector2>());
+            MoveEvent?.Invoke(context.ReadValue<Vector2>());
         }
-        public void OnJump(InputAction.CallbackContext context)
+        
+        public void OnAcclerate(InputAction.CallbackContext context)
         {
-            // if(context.phase == InputActionPhase.Performed)
-            // {
-            //     JumpEvent?.Invoke();
-            // }
+            if(context.started)
+            {
+                AcclerateEvent?.Invoke();
+            }
 
-            // if(context.phase == InputActionPhase.Canceled)
-            // {
-            //     JumpCanceledEvent?.Invoke();
-            // }
+            if(context.canceled)
+            {
+                AcclerateCanceledEvent?.Invoke();
+            }
         }
 
         public void OnShootDirection(InputAction.CallbackContext context)
@@ -119,33 +128,85 @@ namespace V
 
         public void OnPause(InputAction.CallbackContext context)
         {
-            // if(context.phase == InputActionPhase.Performed)
-            // {
-            //     PauseEvent?.Invoke();
+            if(context.started)
+            {
+                PauseEvent?.Invoke();
 
-            //     SetActionMap(InputType.UI);
-            //     Debug.Log("Pause");
-            // }
+                Debug.Log("Pause");
+                SetActionMap(InputType.UI);
+            }
         }
         #endregion
 
         #region UI
         public void OnResume(InputAction.CallbackContext context)
         {
-            // if(context.phase == InputActionPhase.Performed)
-            // {
-            //     ResumeEvent?.Invoke();
+            if(context.started)
+            {
+                ResumeEvent?.Invoke();
 
-            //     SetActionMap(InputType.GamePlay);
-            //     Debug.Log("REsume");
-            // }            
+                SetActionMap(InputType.GamePlay);
+                Debug.Log("REsume");
+            }            
+        }
+
+        public void InvokeResume()
+        {
+            ResumeEvent?.Invoke();
         }
 
         public void OnSubmit(InputAction.CallbackContext context)
         {
-            // SubmitEvent?.Invoke();
+            if(context.started)
+            {
+                OnSubmitEvent?.Invoke();
+                Debug.Log("sub");
+            }
+        }
+        public void OnConfirm(InputAction.CallbackContext context)
+        {
+            if(context.started)
+            {
+                OnConfirmEvent?.Invoke();
+                Debug.Log("com");
+            }            
+        }
+
+        public void OnNavigate(InputAction.CallbackContext context)
+        {
+            
+        }
+
+        public void OnPoint(InputAction.CallbackContext context)
+        {
+            
+        }
+
+        public void OnClick(InputAction.CallbackContext context)
+        {
+            
+        }
+
+        public void OnTrackedDeviceOrientation(InputAction.CallbackContext context)
+        {
+            
+        }
+
+        public void OnTrackedDevicePosition(InputAction.CallbackContext context)
+        {
+            
+        }
+
+        public void OnRightClick(InputAction.CallbackContext context)
+        {
+            
+        }
+
+        public void OnScrollWheel(InputAction.CallbackContext context)
+        {
+            
         }
         #endregion
-    
+
     }
 }
