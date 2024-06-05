@@ -283,11 +283,13 @@ public class SnakeManager : MonoBehaviour
     #region Take Damage
     private void Resume()
     {
+        InputManager.Instance.SetActionMap(InputType.GamePlay);
         IsPause = false;
     }
 
     private void Pasue()
     {
+        InputManager.Instance.SetActionMap(InputType.UI);
         IsPause = true;
     }
 

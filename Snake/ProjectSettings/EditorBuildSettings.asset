@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Snake/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/_UI/Scenes/MainMenu.unity
+    path: Assets/GameFlow/MainMenu.unity
     guid: 3192508ac1575bb408ab940e595a80b5
   - enabled: 1
-    path: Assets/_Snake/Scenes/LoadingScene.unity
-    guid: 6fd13cf439c563c4f9a8408386303938
+    path: Assets/GameFlow/Level_0/Level_0.unity
+    guid: d2675eaf443072d4ca1efc8fb76156f5
   - enabled: 1
-    path: Assets/_Snake/Scenes/UI.unity
-    guid: b1460451be549024fa70056c897eb5bb
+    path: Assets/GameFlow/Level_1/Level_1.unity
+    guid: 42891619b21405c409d6962d33b279fe
+  - enabled: 1
+    path: Assets/GameFlow/LoadingScene.unity
+    guid: 6fd13cf439c563c4f9a8408386303938
   m_configObjects: {}

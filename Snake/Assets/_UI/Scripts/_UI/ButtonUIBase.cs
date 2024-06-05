@@ -1,6 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -21,7 +21,7 @@ namespace V.UI
         [SerializeField] protected ButtonsLayoutState buttonsLayoutState;
 
         protected GameObject LastSelect;
-        protected int LastSelectIndex;
+        [ReadOnly][SerializeField] protected int LastSelectIndex;
 
 
         #region Life Cycle
@@ -29,17 +29,18 @@ namespace V.UI
         {
             StartCoroutine(SetFirstSelectOBJ(buttons[0]));
 
-            InputManager.Instance.OnConfirmEvent += VUIInputManager_OnConfirmEvent;
+            InputManager.Instance.ConfirmEvent += VUIInputManager_OnConfirmEvent;
+            InputManager.Instance.NavigationEvent += InputManager_OnNavigation;
 
             foreach(GameObject _go in buttons)
             {
                 _go.GetComponent<UITriggerEvent>().OnSelectedEvent += BTN_OnSelectedEvent;
             }
         }
-        
+
         protected virtual void OnDisable() 
         {
-            InputManager.Instance.OnConfirmEvent -= VUIInputManager_OnConfirmEvent;
+            InputManager.Instance.ConfirmEvent -= VUIInputManager_OnConfirmEvent;
 
             foreach(GameObject _go in buttons)
             {
@@ -47,8 +48,40 @@ namespace V.UI
             }                
         }
 
-        // 為了適應各種選擇方式(滑鼠，鍵盤，手柄)
-        protected virtual void Update()
+        // // 為了適應各種選擇方式(滑鼠，鍵盤，手柄)
+        // protected virtual void Update()
+        // {
+        //     switch(buttonsLayoutState)
+        //     {
+        //     //     case ButtonsLayoutState.None:
+        //     //         return;
+
+        //         case ButtonsLayoutState.Vertical:
+        //             if(InputManager.Instance.NavigationInput.y > 0)
+        //             {
+        //                 HandleNextSelection(-1);
+        //             }
+        //             if(InputManager.Instance.NavigationInput.y < 0)
+        //             {
+        //                 HandleNextSelection(1);
+        //             }       
+        //             break;             
+                
+        //         case ButtonsLayoutState.Horizontal:
+        //             if(InputManager.Instance.NavigationInput.x > 0)
+        //             {
+        //                 Debug.Log("x > 0");
+        //                 HandleNextSelection(1);
+        //             }
+        //             if(InputManager.Instance.NavigationInput.x < 0)
+        //             {
+        //                 HandleNextSelection(-1);
+        //             }
+        //             break; 
+        //     }
+        // }
+
+        private void InputManager_OnNavigation(Vector2 vector)
         {
             switch(buttonsLayoutState)
             {
@@ -56,22 +89,22 @@ namespace V.UI
             //         return;
 
                 case ButtonsLayoutState.Vertical:
-                    if(InputManager.Instance.NavigationInput.y > 0)
+                    if(vector.y > 0)
                     {
                         HandleNextSelection(-1);
                     }
-                    if(InputManager.Instance.NavigationInput.y < 0)
+                    if(vector.y < 0)
                     {
                         HandleNextSelection(1);
                     }       
                     break;             
                 
                 case ButtonsLayoutState.Horizontal:
-                    if(InputManager.Instance.NavigationInput.x > 0)
+                    if(vector.x > 0)
                     {
                         HandleNextSelection(1);
                     }
-                    if(InputManager.Instance.NavigationInput.x < 0)
+                    if(vector.x < 0)
                     {
                         HandleNextSelection(-1);
                     }
@@ -130,6 +163,11 @@ namespace V.UI
                     return;
                 }
             }
+        }
+
+        protected void SetSelectNothing()
+        {
+            EventSystem.current.SetSelectedGameObject(null);
         }
 
         /// <summary>

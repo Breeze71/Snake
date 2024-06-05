@@ -8,7 +8,8 @@ namespace V.Tool
     {   
         MainMenu,
         LoadingScene,
-        UI,
+        Level_0,
+        Level_1,
     }
 
     public static class Loader

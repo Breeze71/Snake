@@ -35,8 +35,8 @@ namespace V
 
         #region Input Value
         public Vector2 NavigationInput {get; set;}
-        public event Action OnSubmitEvent; // Any Key
-        public event Action OnConfirmEvent; // Enter
+        public event Action<Vector2> NavigationEvent;
+        public event Action ConfirmEvent; // Enter
         #endregion
 
         #region LC
@@ -131,9 +131,6 @@ namespace V
             if(context.started)
             {
                 PauseEvent?.Invoke();
-
-                Debug.Log("Pause");
-                SetActionMap(InputType.UI);
             }
         }
         #endregion
@@ -159,22 +156,20 @@ namespace V
         {
             if(context.started)
             {
-                OnSubmitEvent?.Invoke();
-                Debug.Log("sub");
+                SubmitEvent?.Invoke();
             }
         }
         public void OnConfirm(InputAction.CallbackContext context)
         {
             if(context.started)
             {
-                OnConfirmEvent?.Invoke();
-                Debug.Log("com");
+                ConfirmEvent?.Invoke();
             }            
         }
 
         public void OnNavigate(InputAction.CallbackContext context)
         {
-            
+            NavigationEvent?.Invoke(context.ReadValue<Vector2>());
         }
 
         public void OnPoint(InputAction.CallbackContext context)

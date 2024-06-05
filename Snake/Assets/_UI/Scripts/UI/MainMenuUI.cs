@@ -63,13 +63,13 @@ namespace V.Tool.SaveLoadSystem
 
             // Hide();   
 
-            Loader.LoadScene(Scene.UI);
+            Loader.LoadScene(Scene.Level_0);
             InputManager.Instance.SetActionMap(InputType.GamePlay);
         }
         
         private void ContinueGame_OnClickEvent(UITriggerEvent @event)
         {
-            Loader.LoadScene(lastPlayScene);       
+            UIManager.Instance.ShowUI<SaveSlotsUI>("TeamUI").GetComponent<TeamUI>();
         }
 
         // 顯示存檔 UI

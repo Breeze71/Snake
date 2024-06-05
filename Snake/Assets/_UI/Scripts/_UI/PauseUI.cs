@@ -35,6 +35,7 @@ namespace V.UI
 
         private void InputManager_OnResume()
         {
+            InputManager.Instance.SetActionMap(InputType.GamePlay);
             gameObject.SetActive(false);
         }
 

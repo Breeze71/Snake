@@ -15,6 +15,7 @@ public class PauseUIOpen : MonoBehaviour
     private void InputManager_PauseEvent()
     {
         UIManager.Instance.ShowUI<PauseUI>("PauseUI");
+        InputManager.Instance.SetActionMap(InputType.UI);
     }
 
     private void OnDestroy() 

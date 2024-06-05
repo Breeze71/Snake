@@ -10,14 +10,14 @@ namespace V.UI
     {
         private void OnEnable() 
         {
-            InputManager.Instance.OnSubmitEvent += VUIInputManager_OnSubmitEvent;
-            InputManager.Instance.OnConfirmEvent += VUIInputManager_OnConfirmEvent;
+            InputManager.Instance.SubmitEvent += VUIInputManager_OnSubmitEvent;
+            InputManager.Instance.ConfirmEvent += VUIInputManager_OnConfirmEvent;
         }
 
         private void OnDisable() 
         {
-            InputManager.Instance.OnSubmitEvent -= VUIInputManager_OnSubmitEvent;
-            InputManager.Instance.OnConfirmEvent -= VUIInputManager_OnConfirmEvent;
+            InputManager.Instance.SubmitEvent -= VUIInputManager_OnSubmitEvent;
+            InputManager.Instance.ConfirmEvent -= VUIInputManager_OnConfirmEvent;
         }
 
         private void VUIInputManager_OnConfirmEvent()
