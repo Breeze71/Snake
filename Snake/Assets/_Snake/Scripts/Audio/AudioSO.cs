@@ -7,6 +7,6 @@ public class AudioSO : ScriptableObject
 {
     public AudioClip UIClickClip;
     public AudioClip HurtClip;
-    
+    public AudioClip Eat;
 
 }
