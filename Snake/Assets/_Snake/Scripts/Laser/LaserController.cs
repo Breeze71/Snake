@@ -45,11 +45,6 @@ public class LaserController : MonoBehaviour
         SetupParticleList();
 
         _remindMat = _remindRenderer.material;
-        if(_LaserREmindCoro != null)
-        {
-            StopCoroutine(_LaserREmindCoro);
-        }
-        StartCoroutine(Coroutine_LaserReminder());
     }
 
     private void Update() 
@@ -95,7 +90,14 @@ public class LaserController : MonoBehaviour
             _remindRenderer.SetPosition(1 , endPoint);
         }
 
-        _endVFX.transform.position = _lineRenderer.GetPosition(1);      
+        if(isStillRemind)
+        {
+            _endVFX.transform.position = _lineRenderer.GetPosition(1);     
+        }
+        else
+        {
+            _endVFX.transform.position = _remindRenderer.GetPosition(1);    
+        }
     }
 
     private void Damage(RaycastHit2D hit2D)
@@ -132,6 +134,7 @@ public class LaserController : MonoBehaviour
 
     private IEnumerator Coroutine_LaserReminder()
     {
+        isStillRemind = true;
         _remindLaser.SetActive(true);
         _lineRenderer.enabled = false;
 
