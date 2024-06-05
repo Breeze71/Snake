@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIClickClip: {fileID: 8300000, guid: 9e9661739f8f98741bad06bef9110107, type: 3}
   HurtClip: {fileID: 8300000, guid: fec5daa402f490d4987ede79c706e220, type: 3}
+  Eat: {fileID: 8300000, guid: e299eb2d9bc995b438be6394ca22d6d1, type: 3}

@@ -39,7 +39,7 @@ public class HeadPart : SnakePart
         if(IsAimimg)    return;
         if(_snake.IsPause) return;
         
-        base.HitByBullet(damageAmount);
+        base.HitByBullet(damageAmount,true);
         _snake.CreateBody();
     }
     #endregion

@@ -44,7 +44,11 @@ public class SnakePart : MonoBehaviour
     {
         AudioManager.I.PlayOneShotSound(AudioManager.I._audioSO.HurtClip);
     }
-
+    
+    public virtual void HitByBullet(int damageAmount,bool isHit)
+    {
+        AudioManager.I.PlayOneShotSound(AudioManager.I._audioSO.Eat);
+    }
     public virtual void SetAiming()
     {
 
