@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shot 1 0
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 9371071
+  uniqueIndex: 5661651
   profile: {fileID: 11400000}
   parent: {fileID: 7588474497614400760}
   children:
@@ -9789,7 +9789,7 @@ MonoBehaviour:
   m_Name: "Bullet (From Base_\u4E16\u754C\u65CB\u8F6C\u578B) 0 0"
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 1371854
+  uniqueIndex: 627029
   profile: {fileID: 11400000}
   parent: {fileID: -2563617976019184509}
   children: []
@@ -17410,7 +17410,7 @@ MonoBehaviour:
   m_Name: "SelfPattern (From Base_\u6CE2\u6D6A\u578B) 0 1 0"
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 5273177
+  uniqueIndex: 7172736
   profile: {fileID: 11400000}
   parent: {fileID: 7715549906341697521}
   children: []
@@ -47410,7 +47410,7 @@ MonoBehaviour:
   m_Name: "Shot (From Base_\u4E16\u754C\u65CB\u8F6C\u578B) 0 0"
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 11691895
+  uniqueIndex: 10639683
   profile: {fileID: 11400000}
   parent: {fileID: 7588474497614400760}
   children:
@@ -49828,7 +49828,7 @@ MonoBehaviour:
   m_Name: "Shot (From Base_\u6CE2\u6D6A\u578B) 0 1 0"
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 5547880
+  uniqueIndex: 1486444
   profile: {fileID: 11400000}
   parent: {fileID: 7588474497614400760}
   children:
@@ -54508,7 +54508,7 @@ MonoBehaviour:
   m_Name: Bullet 1 0
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 963174
+  uniqueIndex: 15773184
   profile: {fileID: 11400000}
   parent: {fileID: -8319594628044452970}
   children: []
@@ -63515,7 +63515,7 @@ MonoBehaviour:
   foldoutExport: 1
   foldoutEmptyBin: 1
   foldoutCompactMode: 0
-  currentParamsSelected: {fileID: -2140102435560569368}
+  currentParamsSelected: {fileID: 7588474497614400760}
   numberOfSubAssets: 25
 --- !u!114 &114964359049590580
 MonoBehaviour:
@@ -63530,7 +63530,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 12521575
+  uniqueIndex: 11497913
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -70772,7 +70772,7 @@ MonoBehaviour:
   m_Name: Pattern 0
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 6595374
+  uniqueIndex: 11484412
   profile: {fileID: 11400000}
   parent: {fileID: 114964359049590580}
   children:
@@ -81178,7 +81178,7 @@ MonoBehaviour:
             indexOfFrom: 0
             indexOfTo: 0
             indexOfBlendedChildren: 
-            weight: 1
+            weight: 0
             headerTitle: 'Shot : Value 2'
             blendColor: {r: 0.8967636, g: 0.99950147, b: 0.3263775, a: 1}
             parameterType: 0
@@ -100501,7 +100501,7 @@ MonoBehaviour:
   advancedFoldout: 0
   hasBeenSerializedOnce: 1
   focusedInstruction: -1
-  safetyForPlaymode: 87
+  safetyForPlaymode: 91
 --- !u!114 &7715549906341697521
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100515,7 +100515,7 @@ MonoBehaviour:
   m_Name: "Bullet (From Base_\u6CE2\u6D6A\u578B) 0 1 0"
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 14812191
+  uniqueIndex: 11851518
   profile: {fileID: 11400000}
   parent: {fileID: -2140102435560569368}
   children:
