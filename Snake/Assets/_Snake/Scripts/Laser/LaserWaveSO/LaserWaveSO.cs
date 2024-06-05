@@ -10,9 +10,11 @@ public class LaserWaveSO : ScriptableObject
     public float _spawnCountDown;
     [Expandable] public LaserInfoSO[] LaserInfos;
 
+#if UNITY_EDITOR
     [Button]
     public void SpawnWave()
     {
         LaserSpawner.I.SpawnWave(LaserInfos);
     }
+#endif
 }

@@ -307,20 +307,30 @@ public class SnakeManager : MonoBehaviour
         SnakeHealth.TakeDamage(damage);
     }
 
+    [Button]
     private void StartInvincible()
     {
         if(_invincibleCoroutine != null)
         {
             StopCoroutine(_invincibleCoroutine);
-            _invincibleCoroutine = StartCoroutine(Coroutine_Invincible());
-            return;
         }
         _invincibleCoroutine = StartCoroutine(Coroutine_Invincible());
+
+        Debug.Log("Call invin");
+        
+        foreach(SnakePart part in _snakePart)
+        {
+            if(part.Flash == null)
+            {
+               continue;
+            }
+
+            part.Flash.StartFlash(_snakeSO.InvincibleTime);
+        }
     }
 
     private IEnumerator Coroutine_Invincible()
     {
-        //MoveNegative();
         _isInvincible = true;
         yield return new WaitForSeconds(_snakeSO.InvincibleTime);
         _isInvincible = false;

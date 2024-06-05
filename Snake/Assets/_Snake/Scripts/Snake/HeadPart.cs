@@ -30,7 +30,7 @@ public class HeadPart : SnakePart
         if(_snake.IsPause)  return;
 
         base.HitByLaser(damageAmount);
-
+        Flash.StartFlash();
         _snake.TakeDamage(damageAmount);
     }
 
@@ -40,6 +40,7 @@ public class HeadPart : SnakePart
         if(_snake.IsPause) return;
         
         base.HitByBullet(damageAmount);
+        Flash.StartFlash();
         _snake.CreateBody();
     }
     #endregion

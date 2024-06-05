@@ -10,6 +10,7 @@ public class SnakePart : MonoBehaviour
     [Expandable][SerializeField] protected SnakePartSO _partSO;
     [SerializeField] protected SpriteRenderer _sprite;
     [SerializeField] protected SnakeManager _snake;
+    public FlashControl Flash;
     public GameObject Indicator;
     public bool IsAimimg;
 

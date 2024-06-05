@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9180045727946901219}
   - component: {fileID: 2948062945568999912}
   - component: {fileID: -3626768903868601768}
+  - component: {fileID: 6484801737850946527}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -171,6 +172,7 @@ MonoBehaviour:
   _partSO: {fileID: 11400000, guid: 28a08c6b72c2a704c9d4be64873de611, type: 2}
   _sprite: {fileID: 1269298600962112489}
   _snake: {fileID: 0}
+  flash: {fileID: 6484801737850946527}
   Indicator: {fileID: 0}
   IsAimimg: 0
 --- !u!114 &-3626768903868601768
@@ -227,6 +229,21 @@ MonoBehaviour:
   useDefaultGizmoColor: 1
   gizmoColor: {r: 0, g: 0, b: 0, a: 1}
   gizmoZOffset: 0
+--- !u!114 &6484801737850946527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4412768727739483253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d70704e2326994682d3f6975b29e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flashColor: {r: 1, g: 0.2784314, b: 0.34117648, a: 1}
+  _flashTime: 0.25
+  _spriteRenderer: {fileID: 1269298600962112489}
 --- !u!1 &8923835890780436324
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +296,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1c2921818ee88cf4b90ead3d151b5e12, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

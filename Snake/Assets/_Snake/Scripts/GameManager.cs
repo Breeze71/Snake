@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using NaughtyAttributes;
 using UnityEngine;
+using V.Tool;
+using V.UI;
 namespace V
 {
 public class GameManager : MonoBehaviour
@@ -54,7 +56,7 @@ public class GameManager : MonoBehaviour
     {
         if(currentHealth == 0)
         {
-            Debug.Log("game over");
+            UIManager.Instance.ShowUI<ReplayUI>("ReplayUI");
         }
     }
 
@@ -64,6 +66,11 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("current boss health" + currentBossHealth);
         CheckCurrentState();
+
+        if(currentBossHealth == 0)
+        {
+            Loader.LoadNextScene();
+        }
     }
 
     private void CheckCurrentState()

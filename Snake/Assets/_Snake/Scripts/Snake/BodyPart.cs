@@ -10,7 +10,6 @@ public class BodyPart : SnakePart
         if(_snake.IsPause) return;
 
         base.HitByLaser(damageAmount);
-
         _snake.DestroyBodyAndAfter(partIndex);
     }
 

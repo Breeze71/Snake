@@ -38,5 +38,6 @@ public class EndGameUI : ButtonUIBase
         base.OnDisable();
 
         _returnToMenu.OnClickEvent -= ReturnMenu_OnClick;
+        _showteam.OnClickEvent -= Showteam_OnClick;
     }
 }
