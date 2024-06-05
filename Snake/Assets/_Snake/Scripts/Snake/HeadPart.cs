@@ -50,7 +50,10 @@ public class HeadPart : SnakePart
     {
         base.SetAiming();
 
-                _sprite.enabled = false;
+        if(_sprite != null)
+        {
+            _sprite.enabled = false;
+        }
         IsAimimg = true;    
     }
 
@@ -58,7 +61,10 @@ public class HeadPart : SnakePart
     {
         base.SetNotAim();
 
-                _sprite.enabled = true;
+        if(_sprite != null)
+        {
+            _sprite.enabled = true;
+        }
         IsAimimg = false;      
     }
 }

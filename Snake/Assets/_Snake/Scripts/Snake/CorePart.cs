@@ -35,6 +35,7 @@ public class CorePart : SnakePart
     private void OnDisable() 
     {
         InputManager.Instance.AimEvent -= InputManager_OnAim;
+        InputManager.Instance.AimCanceledEvent -= InputManager_OnAimCanceled;
         InputManager.Instance.AimDirectionEvent -= InputManager_OnAimDirection;
     }
 
