@@ -23,17 +23,17 @@ public class SnakeSO : ScriptableObject
     public int HealthAmount;
     public float InvincibleTime = .5f;
 
-    public Vector2 HandleMoveDirection()
-    {
-        Vector2 moveDir = Vector3.zero;
+    // public Vector2 HandleMoveDirection()
+    // {
+    //     Vector2 moveDir = Vector3.zero;
 
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+    //     horizontalInput = Input.GetAxisRaw("Horizontal");
+    //     verticalInput = Input.GetAxisRaw("Vertical");
 
-        moveDir = new Vector2(horizontalInput, verticalInput);
+    //     moveDir = new Vector2(horizontalInput, verticalInput);
         
-        return moveDir.normalized;        
-    }
+    //     return moveDir.normalized;        
+    // }
 
     public float GetAngleFromVector(Vector2 dir)
     {

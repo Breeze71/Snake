@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+using V;
 
 public class SnakeManager : MonoBehaviour
 {
@@ -19,7 +20,8 @@ public class SnakeManager : MonoBehaviour
     // move
     [ReadOnly] public bool _canSpeedChange = true;
     public Rigidbody2D HeadRB;
-    private float _currentInputAngle;
+    private Vector2 _inputVector;
+    private float _currentMoveAngle;
     private float _currentSpeed;
     private bool _canMoveInput = true;
     private Coroutine _disableInputCoroutine;
@@ -48,6 +50,10 @@ public class SnakeManager : MonoBehaviour
         _isInvincible = false;
         _canSpeedChange = true;
         _currentSpeed = _snakeSO.Speed;
+
+        InputManager.Instance.MoveEvent += InputManager_OnMove;
+        InputManager.Instance.AcclerateEvent += InputManager_OnAcclerate;
+        InputManager.Instance.AcclerateCanceledEvent += InputManager_OnAcclerateCancel;
     }
 
     private void FixedUpdate()
@@ -66,6 +72,13 @@ public class SnakeManager : MonoBehaviour
     {
         HandleAcclerate();
     }
+
+    private void OnDestroy() 
+    {
+        InputManager.Instance.MoveEvent -= InputManager_OnMove;
+        InputManager.Instance.AcclerateEvent -= InputManager_OnAcclerate;
+        InputManager.Instance.AcclerateCanceledEvent -= InputManager_OnAcclerateCancel;    
+    }
     #endregion
 
     #region Init
@@ -77,6 +90,20 @@ public class SnakeManager : MonoBehaviour
     #endregion
 
     #region Head Movement
+    private void InputManager_OnAcclerateCancel()
+    {
+        
+    }
+
+    private void InputManager_OnAcclerate()
+    {
+        
+    }
+
+    private void InputManager_OnMove(Vector2 vector)
+    {
+        _inputVector = vector;
+    }
     private void MoveSnake()
     {
         HeadRB.velocity = _snakePart[0].transform.right * _currentSpeed;
@@ -88,27 +115,27 @@ public class SnakeManager : MonoBehaviour
         // {
         //     _snakePart[0].transform.Rotate(new Vector3(0, 0, - _snakeSO.RotationSpeed * Time.deltaTime * horizontalInput));
         // }
-        if(!_canMoveInput)    return;
-        
-        if(_snakeSO.HandleMoveDirection() != Vector2.zero)
+
+        if(_canMoveInput && _inputVector != Vector2.zero)
         {
-            _currentInputAngle = _snakeSO.GetAngleFromVector(_snakeSO.HandleMoveDirection());
+            _currentMoveAngle = _snakeSO.GetAngleFromVector(_inputVector);
         }
-        _snakePart[0].transform.eulerAngles = new Vector3(0, 0, _currentInputAngle);
+        
+        _snakePart[0].transform.eulerAngles = new Vector3(0, 0, _currentMoveAngle);
     }
     private void HandleAcclerate()
     {
         if(!_canMoveInput) return;
         if(!_canSpeedChange)    return;
 
-        if(Input.GetKeyDown(_snakeSO.AcclerateKey))
-        {
-            _currentSpeed = _snakeSO.shiftSpeed;
-        }
-        else if(Input.GetKeyUp(_snakeSO.AcclerateKey))
-        {
-            _currentSpeed = _snakeSO.Speed;
-        }
+        // if(Input.GetKeyDown(_snakeSO.AcclerateKey))
+        // {
+        //     _currentSpeed = _snakeSO.shiftSpeed;
+        // }
+        // else if(Input.GetKeyUp(_snakeSO.AcclerateKey))
+        // {
+        //     _currentSpeed = _snakeSO.Speed;
+        // }
     }
     public void MoveNegative()
     {
@@ -116,10 +143,9 @@ public class SnakeManager : MonoBehaviour
 
         StartDisableInput();
 
-        _currentInputAngle = _currentInputAngle - 180f;
+        _currentMoveAngle = _currentMoveAngle - 180f;
         
-        _snakePart[0].transform.eulerAngles = new Vector3(0, 0, _currentInputAngle);
-        //Debug.Log("aaaa");
+        _snakePart[0].transform.eulerAngles = new Vector3(0, 0, _currentMoveAngle);
     }
     private void StartDisableInput()
     {

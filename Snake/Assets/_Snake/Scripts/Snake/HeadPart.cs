@@ -20,7 +20,6 @@ public class HeadPart : SnakePart
         if((_partSO.ObstacleMask.value & (1 << other.gameObject.layer)) > 0)
         {
             _snake.MoveNegative();
-            Debug.Log(other.gameObject.name);
             _snake.TakeDamage(_partSO.obstacleDamage);
         }
     }
