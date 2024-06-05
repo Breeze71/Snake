@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using V.Event;
 
 namespace V.Tool.SaveLoadSystem
 {   
@@ -12,30 +11,30 @@ namespace V.Tool.SaveLoadSystem
     /// </summary>
     public class DeathCountTest : MonoBehaviour//, IDataPersistable
     {
-        private int currentDeathCount = 0;
+        // private int currentDeathCount = 0;
 
-        [SerializeField] private TextMeshProUGUI deathCountText;
+        // [SerializeField] private TextMeshProUGUI deathCountText;
 
-        #region Unity
+        // #region Unity
 
-        private void Start() 
-        {
-            GameEventsManager.Instance.PlayerEvent.OnPlayerDead += PlayerEvent_OnPlayerDead;
-        }
-        private void OnDestroy()
-        {
-            GameEventsManager.Instance.PlayerEvent.OnPlayerDead -= PlayerEvent_OnPlayerDead;            
-        }
-        #endregion
+        // private void Start() 
+        // {
+        //     GameEventsManager.Instance.PlayerEvent.OnPlayerDead += PlayerEvent_OnPlayerDead;
+        // }
+        // private void OnDestroy()
+        // {
+        //     GameEventsManager.Instance.PlayerEvent.OnPlayerDead -= PlayerEvent_OnPlayerDead;            
+        // }
+        // #endregion
 
-        /// <summary>
-        /// Recieve Player Dead Event
-        /// </summary>
-        private void PlayerEvent_OnPlayerDead()
-        {
-            currentDeathCount++;
-            deathCountText.text = "DeathCount " + currentDeathCount; // Increase Dead count
-        }
+        // /// <summary>
+        // /// Recieve Player Dead Event
+        // /// </summary>
+        // private void PlayerEvent_OnPlayerDead()
+        // {
+        //     currentDeathCount++;
+        //     deathCountText.text = "DeathCount " + currentDeathCount; // Increase Dead count
+        // }
 
         // #region IDataPersistable
         // public void LoadData(GameData _gameData)

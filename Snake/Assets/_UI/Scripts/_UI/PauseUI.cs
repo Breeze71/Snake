@@ -71,7 +71,7 @@ namespace V.UI
         private void QuitGame_OnClickEvent(UITriggerEvent @event)
         {
             Debug.Log("quit");
-            Loader.LoadScene(Scene.MainMenu);
+            Loader.LoadScene(Scene.HOME);
         }
 
 

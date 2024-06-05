@@ -8,13 +8,13 @@ using V.UI;
 public class TeamUI : ButtonUIBase
 {
     [Header("Button")]
-    [SerializeField] private UITriggerEvent _returnMenu;
+    [SerializeField] private UITriggerEvent _closeMenu;
 
     protected override void OnEnable()
     {
         base.OnEnable();
 
-        _returnMenu.OnClickEvent += ReturnMenu_OnClick;
+        _closeMenu.OnClickEvent += ReturnMenu_OnClick;
         InputManager.Instance.ResumeEvent += InputManager_ResumeEvent;
 
         SetSelectNothing();
@@ -34,7 +34,7 @@ public class TeamUI : ButtonUIBase
     {
         base.OnDisable();
 
-        _returnMenu.OnClickEvent -= ReturnMenu_OnClick;
+        _closeMenu.OnClickEvent -= ReturnMenu_OnClick;
     }
 
 }

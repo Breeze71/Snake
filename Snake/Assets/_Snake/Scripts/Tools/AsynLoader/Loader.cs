@@ -6,7 +6,7 @@ namespace V.Tool
 {
     public enum Scene
     {   
-        MainMenu,
+        HOME,
         LoadingScene,
         Level_0,
         Level_1,
