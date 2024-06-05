@@ -1,5 +1,6 @@
 using System;
-using V.Tool.AsyncLoader;
+using UnityEngine;
+using V.Tool;
 
 namespace V.Tool.SaveLoadSystem
 {
@@ -20,7 +21,8 @@ namespace V.Tool.SaveLoadSystem
         /// </summary>
         public GameData()
         {
-            CurrentScene = Scene.ForeWord;
+            // CurrentScene = Scene.ForeWord;
+            Debug.Log("fix");
             // coinsCollectedDic = new SerializableDictionary<string, bool>(); 
         }
 

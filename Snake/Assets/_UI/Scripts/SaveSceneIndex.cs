@@ -15,7 +15,7 @@ namespace V
 
         public void SaveData(GameData _gameData)
         {
-            _gameData.CurrentScene = (V.Tool.AsyncLoader.Scene)SceneManager.GetActiveScene().buildIndex;
+            _gameData.CurrentScene = (V.Tool.Scene)SceneManager.GetActiveScene().buildIndex;
         }
     }
 }

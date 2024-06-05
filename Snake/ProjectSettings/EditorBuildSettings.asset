@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Snake/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/_UI/Scenes/MainMenu.unity
+    guid: 3192508ac1575bb408ab940e595a80b5
+  - enabled: 1
+    path: Assets/_Snake/Scenes/LoadingScene.unity
+    guid: 6fd13cf439c563c4f9a8408386303938
+  - enabled: 1
+    path: Assets/_Snake/Scenes/UI.unity
+    guid: b1460451be549024fa70056c897eb5bb
   m_configObjects: {}

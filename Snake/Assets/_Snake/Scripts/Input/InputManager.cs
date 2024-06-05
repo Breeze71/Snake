@@ -150,6 +150,11 @@ namespace V
             }            
         }
 
+        public void InvokeResume()
+        {
+            ResumeEvent?.Invoke();
+        }
+
         public void OnSubmit(InputAction.CallbackContext context)
         {
             if(context.started)

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using V.Tool.AsyncLoader;
+using V.Tool;
 using V.Tool.JuicyFeeling;
 using V.Tool.SaveLoadSystem;
 
@@ -46,12 +46,15 @@ namespace V.UI
             loadGame.OnClickEvent -= LoadGame_OnClickEvent;
             options.OnClickEvent -= Options_OnClickEvent;;
             quitGame.OnClickEvent -= QuitGame_OnClickEvent;   
+
+            InputManager.Instance.ResumeEvent -= InputManager_OnResume;
         }
 
         private void ReturnToGame_OnClickEvent(UITriggerEvent @event)
         {
             Hide();
             InputManager.Instance.SetActionMap(InputType.GamePlay);
+            InputManager.Instance.InvokeResume();
         }
 
         private void LoadGame_OnClickEvent(UITriggerEvent @event)

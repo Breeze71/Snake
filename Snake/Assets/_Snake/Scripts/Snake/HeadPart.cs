@@ -27,12 +27,15 @@ public class HeadPart : SnakePart
     #region Take Damage
     public override void HitByLaser(int damageAmount)
     {
+        if(_snake.IsPause)  return;
+
         _snake.TakeDamage(damageAmount);
     }
 
     public override void HitByBullet(int damageAmount)
     {
         if(IsAimimg)    return;
+        if(_snake.IsPause) return;
 
         _snake.CreateBody();
     }

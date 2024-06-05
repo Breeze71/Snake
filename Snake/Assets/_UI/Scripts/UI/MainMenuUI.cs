@@ -1,7 +1,7 @@
 using V.UI;
 using UnityEngine;
-using V.Tool.AsyncLoader;
-using Scene = V.Tool.AsyncLoader.Scene;
+using V.Tool;
+using Scene = V.Tool;
 using NaughtyAttributes;
 using System;
 
@@ -19,6 +19,7 @@ namespace V.Tool.SaveLoadSystem
 
         private void Awake() 
         {
+            if(DataPersistenceManager.Instance == null) return; 
             DataPersistenceManager.Instance.LoadOneData(this);
         }
 
@@ -32,6 +33,7 @@ namespace V.Tool.SaveLoadSystem
             quitGame.OnClickEvent += QuitGame_OnClickEvent;
 
             // 沒 game data 時，不能按讀檔和繼續
+            if(DataPersistenceManager.Instance == null) return; 
             Debug.Log("Find Game data " + DataPersistenceManager.Instance.HasGameData());
 
             if(!DataPersistenceManager.Instance.HasGameData())
@@ -53,13 +55,16 @@ namespace V.Tool.SaveLoadSystem
 
         private void NewGame_OnClickEvent(UITriggerEvent @event)
         {
-            SaveSlotsUI _saveSlotsUI;
-            _saveSlotsUI = V.UI.UIManager.Instance.ShowUI<SaveSlotsUI>("SaveSlotsUI").GetComponent<SaveSlotsUI>();
-            _saveSlotsUI.GetLastOpenUIName(this);
-            _saveSlotsUI.ActiveSaveSlot(false);
-            // lastPlayScene = Scene.ForeWord;
+            // SaveSlotsUI _saveSlotsUI;
+            // _saveSlotsUI = V.UI.UIManager.Instance.ShowUI<SaveSlotsUI>("SaveSlotsUI").GetComponent<SaveSlotsUI>();
+            // _saveSlotsUI.GetLastOpenUIName(this);
+            // _saveSlotsUI.ActiveSaveSlot(false);
+            // // lastPlayScene = Scene.ForeWord;
 
-            Hide();          
+            // Hide();   
+
+            Loader.LoadScene(Scene.UI);
+            InputManager.Instance.SetActionMap(InputType.GamePlay);
         }
         
         private void ContinueGame_OnClickEvent(UITriggerEvent @event)

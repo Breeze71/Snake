@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using V.Tool.AsyncLoader;
+using V.Tool;
 using V.UI;
 
 namespace V.Tool.SaveLoadSystem
@@ -60,7 +60,8 @@ namespace V.Tool.SaveLoadSystem
             if(!isLoadingGame)
             {
                 DataPersistenceManager.Instance.StartNewGame();
-                Loader.LoadScene(Scene.ForeWord);
+                // Loader.LoadScene(Scene.ForeWord);
+                Debug.Log("fix");
                 Debug.LogWarning("Change to fore world");
                 return;
             }

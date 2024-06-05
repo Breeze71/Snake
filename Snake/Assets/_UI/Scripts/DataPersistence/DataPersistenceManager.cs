@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using System;
 
 // 只有在 OnSceneLoad and Awake 會 LoadData，所以中途生成的不會讀到數據(需另外處理，或是在生成時 Load)
 namespace V.Tool.SaveLoadSystem
@@ -70,7 +71,7 @@ namespace V.Tool.SaveLoadSystem
         }
 
         /* 僅次於 OnEnable，場景載入時，讀取存檔 */
-        public void SceneManager_OnSceneLoaded(Scene _scene, LoadSceneMode _loadSceneMode)
+        public void SceneManager_OnSceneLoaded(UnityEngine.SceneManagement.Scene _scene, LoadSceneMode _loadSceneMode)
         {
             dataPersistableList = FindAllDataPersistance();
             

@@ -122,11 +122,13 @@ public class CorePart : SnakePart
     public override void HitByLaser(int damageAmount)
     {
         // minus health
+        if(_snake.IsPause) return;
         _snake.TakeDamage(damageAmount);
     }
 
     public override void HitByBullet(int damageAmount)
     {
+        if(_snake.IsPause) return;
         _snake.TakeDamage(damageAmount);
     }
 }

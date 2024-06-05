@@ -20,6 +20,8 @@ public abstract class SnakePart : MonoBehaviour
 
     protected virtual void FixedUpdate() 
     {
+        if(_snake.IsPause)  return;
+
         StoreHistoryInfo();
     }
 
