@@ -75,7 +75,9 @@ public class SnakeManager : MonoBehaviour
     {
         InputManager.Instance.MoveEvent -= InputManager_OnMove;
         InputManager.Instance.AcclerateEvent -= InputManager_OnAcclerate;
-        InputManager.Instance.AcclerateCanceledEvent -= InputManager_OnAcclerateCancel;    
+        InputManager.Instance.AcclerateCanceledEvent -= InputManager_OnAcclerateCancel;  
+        InputManager.Instance.PauseEvent -= Pasue;
+        InputManager.Instance.ResumeEvent -= Resume;  
     }
     #endregion
 

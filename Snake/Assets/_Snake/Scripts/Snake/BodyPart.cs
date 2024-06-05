@@ -9,6 +9,8 @@ public class BodyPart : SnakePart
         if(IsAimimg)   return;
         if(_snake.IsPause) return;
 
+        base.HitByLaser(damageAmount);
+
         _snake.DestroyBodyAndAfter(partIndex);
     }
 
@@ -17,6 +19,7 @@ public class BodyPart : SnakePart
         if(IsAimimg)   return;
         if(_snake.IsPause) return;
         
+        base.HitByBullet(damageAmount);
         _snake.DestroyLastBody();
     }
 
@@ -24,7 +27,7 @@ public class BodyPart : SnakePart
     {
         base.SetAiming();
         
-                GetComponentInChildren<SpriteRenderer>().enabled = false;
+                _sprite.enabled = false;
         IsAimimg = true;    
     }
 
@@ -32,7 +35,7 @@ public class BodyPart : SnakePart
     {
         base.SetNotAim();
 
-                GetComponentInChildren<SpriteRenderer>().enabled = true;
+                _sprite.enabled = true;
         IsAimimg = false;      
     }
 }

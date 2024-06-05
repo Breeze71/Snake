@@ -78,7 +78,10 @@ public class CorePart : SnakePart
             StopCoroutine(_aimHoldCoroutine);
         }
 
-        Indicator.SetActive(false);
+        if(Indicator != null)
+        {
+            Indicator.SetActive(false);
+        }
         _snake.SetBodyEnable();
 
         if(!_isAiming)  return;
@@ -123,12 +126,16 @@ public class CorePart : SnakePart
     {
         // minus health
         if(_snake.IsPause) return;
+
+        base.HitByLaser(damageAmount);
         _snake.TakeDamage(damageAmount);
     }
 
     public override void HitByBullet(int damageAmount)
     {
         if(_snake.IsPause) return;
+
+        base.HitByBullet(damageAmount);
         _snake.TakeDamage(damageAmount);
     }
 }

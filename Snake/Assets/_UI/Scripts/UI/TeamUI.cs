@@ -27,6 +27,7 @@ public class TeamUI : ButtonUIBase
 
     private void ReturnMenu_OnClick(UITriggerEvent @event)
     {
+        AudioManager.I.PlayOneShotSound(AudioManager.I._audioSO.UIClickClip);
         gameObject.SetActive(false);
     }
 

@@ -150,6 +150,7 @@ MonoBehaviour:
   partIndex: 0
   SnakeInfos: []
   _partSO: {fileID: 11400000, guid: 28a08c6b72c2a704c9d4be64873de611, type: 2}
+  _sprite: {fileID: 1269298600962112489}
   _snake: {fileID: 0}
   Indicator: {fileID: 0}
   IsAimimg: 0

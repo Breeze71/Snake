@@ -23,11 +23,13 @@ public class EndGameUI : ButtonUIBase
 
     private void Showteam_OnClick(UITriggerEvent @event)
     {
+        AudioManager.I.PlayOneShotSound(AudioManager.I._audioSO.UIClickClip);
         UIManager.Instance.ShowUI<TeamUI>("TeamUI");
     }
 
     private void ReturnMenu_OnClick(UITriggerEvent @event)
     {
+        AudioManager.I.PlayOneShotSound(AudioManager.I._audioSO.UIClickClip);
         Loader.LoadScene(Scene.HOME);
     }
 

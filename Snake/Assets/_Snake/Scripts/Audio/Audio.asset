@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9486392c71058144bc148d94b9421c8, type: 3}
+  m_Name: Audio
+  m_EditorClassIdentifier: 
+  UIClickClip: {fileID: 8300000, guid: 9e9661739f8f98741bad06bef9110107, type: 3}
+  HurtClip: {fileID: 8300000, guid: fec5daa402f490d4987ede79c706e220, type: 3}

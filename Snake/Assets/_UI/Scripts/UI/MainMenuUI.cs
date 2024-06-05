@@ -62,13 +62,14 @@ namespace V.Tool.SaveLoadSystem
             // // lastPlayScene = Scene.ForeWord;
 
             // Hide();   
-
-            Loader.LoadScene(Scene.Level_0);
+            AudioManager.I.PlayOneShotSound(AudioManager.I._audioSO.UIClickClip);
             InputManager.Instance.SetActionMap(InputType.GamePlay);
+            Loader.LoadScene(Scene.Level_0);
         }
         
         private void ContinueGame_OnClickEvent(UITriggerEvent @event)
         {
+            AudioManager.I.PlayOneShotSound(AudioManager.I._audioSO.UIClickClip);
             UIManager.Instance.ShowUI<SaveSlotsUI>("TeamUI").GetComponent<TeamUI>();
         }
 
@@ -85,6 +86,7 @@ namespace V.Tool.SaveLoadSystem
 
         private void QuitGame_OnClickEvent(UITriggerEvent @event)
         {
+            AudioManager.I.PlayOneShotSound(AudioManager.I._audioSO.UIClickClip);
             Application.Quit();
         }
 
