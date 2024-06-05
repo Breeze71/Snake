@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bullet 0 0 (From 0_1Stage) 0
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 10728532
+  uniqueIndex: 11061913
   profile: {fileID: 11400000}
   parent: {fileID: 1612843634766365647}
   children: []
@@ -22370,7 +22370,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 8797681
+  uniqueIndex: 2780820
   profile: {fileID: 11400000}
   parent: {fileID: 114964359049590580}
   children:
@@ -54503,7 +54503,7 @@ MonoBehaviour:
   m_Name: "Shot_TLU (From Base_\u659C\u98DE\u578B) 0"
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 7815805
+  uniqueIndex: 10254412
   profile: {fileID: 11400000}
   parent: {fileID: 114676994745875216}
   children:
@@ -65657,7 +65657,7 @@ MonoBehaviour:
   m_Name: Bullet 0 0 (From 0_1Stage) 0 0
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 12510643
+  uniqueIndex: 13519601
   profile: {fileID: 11400000}
   parent: {fileID: 4372988045360965812}
   children: []
@@ -124649,7 +124649,7 @@ MonoBehaviour:
   m_Name: Bullet 0 0 (From 0_1Stage) 0 1
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 3405073
+  uniqueIndex: 11530975
   profile: {fileID: 11400000}
   parent: {fileID: -1426714053535899035}
   children: []
