@@ -53,9 +53,10 @@ namespace V.UI
 
         private void ReturnToGame_OnClickEvent(UITriggerEvent @event)
         {
-            Hide();
             InputManager.Instance.SetActionMap(InputType.GamePlay);
             InputManager.Instance.InvokeResume();
+            Debug.Log("d");
+            Hide();
         }
 
         private void LoadGame_OnClickEvent(UITriggerEvent @event)

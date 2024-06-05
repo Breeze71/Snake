@@ -63,11 +63,6 @@ namespace V
             }
         }
 
-        private void Start() 
-        {    
-            SetActionMap(_startInputType);
-        }
-
         private void OnDisable() 
         {
  

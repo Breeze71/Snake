@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using V;
 using V.Tool;
 using V.UI;
 
@@ -21,6 +22,7 @@ public class ReplayUI : ButtonUIBase
         _replay.OnClickEvent += Replay_OnClickEvent;
 
         SetSelectNothing();
+        InputManager.Instance.SetActionMap(InputType.UI);
     }
 
     private void Showteam_OnClick(UITriggerEvent @event)
@@ -37,6 +39,7 @@ public class ReplayUI : ButtonUIBase
 
     private void Replay_OnClickEvent(UITriggerEvent @event)
     {
+        InputManager.Instance.SetActionMap(InputType.GamePlay);
         AudioManager.I.PlayOneShotSound(AudioManager.I._audioSO.UIClickClip);
         Loader.LoadCurrentScene();
     }

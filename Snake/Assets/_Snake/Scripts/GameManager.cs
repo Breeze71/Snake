@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
         if(currentHealth == 0)
         {
             UIManager.Instance.ShowUI<ReplayUI>("ReplayUI");
+            
         }
     }
 

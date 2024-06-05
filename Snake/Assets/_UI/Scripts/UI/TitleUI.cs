@@ -12,6 +12,7 @@ namespace V.UI
         {
             InputManager.Instance.SubmitEvent += VUIInputManager_OnSubmitEvent;
             InputManager.Instance.ConfirmEvent += VUIInputManager_OnConfirmEvent;
+            InputManager.Instance.SetActionMap(InputType.UI);
         }
 
         private void OnDisable() 

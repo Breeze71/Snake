@@ -31,6 +31,7 @@ namespace V.UI
 
             InputManager.Instance.ConfirmEvent += VUIInputManager_OnConfirmEvent;
             InputManager.Instance.NavigationEvent += InputManager_OnNavigation;
+            InputManager.Instance.SetActionMap(InputType.UI);
 
             foreach(GameObject _go in buttons)
             {

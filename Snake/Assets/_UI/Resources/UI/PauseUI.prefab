@@ -225,7 +225,7 @@ RectTransform:
   m_Children:
   - {fileID: 6290814769788370360}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -309,10 +309,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttons:
   - {fileID: 5083158185279622628}
-  - {fileID: 2405005375443327354}
-  - {fileID: 6664015592410972220}
   - {fileID: 303759301793085050}
   buttonsLayoutState: 1
+  LastSelectIndex: 0
   returnToGame: {fileID: 930678981002365646}
   loadGame: {fileID: 8830422728877398664}
   options: {fileID: 5071416758070373055}

@@ -28,6 +28,18 @@ public class LaserController : MonoBehaviour
     private  List<ParticleSystem> particles = new List<ParticleSystem>();
 
     #region LC
+    private void Awake() 
+    {
+        _remindMat = _remindRenderer.material;
+    }
+    private void OnEnable() 
+    {
+        if(_LaserREmindCoro != null)
+        {
+            StopCoroutine(_LaserREmindCoro);
+        }
+        StartCoroutine(Coroutine_LaserReminder());            
+    }
     private void Start() 
     {
         SetupParticleList();
@@ -120,6 +132,7 @@ public class LaserController : MonoBehaviour
 
     private IEnumerator Coroutine_LaserReminder()
     {
+        _remindLaser.SetActive(true);
         _lineRenderer.enabled = false;
 
         StartFlash(.4f);

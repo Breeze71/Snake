@@ -1291,7 +1291,7 @@ GameObject:
   - component: {fileID: 6498803434243904174}
   - component: {fileID: 8777382978790808022}
   - component: {fileID: 8993227549827350673}
-  - component: {fileID: 8577826397390932491}
+  - component: {fileID: 7458955498657332771}
   m_Layer: 5
   m_Name: RePlayUI
   m_TagString: Untagged
@@ -1383,7 +1383,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8577826397390932491
+--- !u!114 &7458955498657332771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9088787245560524286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d2dc78447045ff4eb5519bf8a6b8dfe, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ceb2238a128c3e41a8b755b0bbc771a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttons:
@@ -1401,5 +1401,6 @@ MonoBehaviour:
   - {fileID: 8374871935160167017}
   buttonsLayoutState: 1
   LastSelectIndex: 0
+  _replay: {fileID: 740441809066022370}
   _returnToMenu: {fileID: 1126225201679927827}
   _showteam: {fileID: 8448227204188566836}
