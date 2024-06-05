@@ -61,6 +61,7 @@ namespace V
                 _playerInput.GamePlay.SetCallbacks(this);
                 _playerInput.UI.SetCallbacks(this);
             }
+            SetActionMap(_startInputType);
         }
 
         private void OnDisable() 
@@ -81,6 +82,7 @@ namespace V
                 {
                     inputMap.Disable();
                 }
+                Debug.Log("Change Map");
             }
         }
 
