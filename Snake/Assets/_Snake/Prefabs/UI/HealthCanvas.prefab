@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 45330897, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
+  m_Sprite: {fileID: 1575956912, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -185,7 +185,7 @@ RectTransform:
   m_Children:
   - {fileID: 7164244944334425992}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -210,7 +210,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -281,8 +281,8 @@ RectTransform:
   m_GameObject: {fileID: 3571055992070772051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5199917011447138535}
   - {fileID: 3824378075785249221}
@@ -294,7 +294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 300, y: -50}
+  m_AnchoredPosition: {x: 152, y: -49}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6857743457236435350
@@ -315,6 +315,18 @@ MonoBehaviour:
   - {fileID: 2283140141407773374}
   - {fileID: 7719795084019711935}
   - {fileID: 8907023854170764021}
+  _hurtBlocks:
+  - {fileID: -2072287614, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
+  - {fileID: 1909480986, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
+  - {fileID: 1909480986, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
+  - {fileID: 1909480986, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
+  - {fileID: 1136743228, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
+  _fullhealth:
+  - {fileID: 1575956912, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
+  - {fileID: 1997783572, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
+  - {fileID: 1997783572, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
+  - {fileID: 1997783572, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
+  - {fileID: 1094657504, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
   _snake: {fileID: 0}
 --- !u!1 &4588093963206392340
 GameObject:
@@ -382,7 +394,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 599730326, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
+  m_Sprite: {fileID: 1997783572, guid: 046e5b7cb6ce4ba4281fdc09879653e3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
