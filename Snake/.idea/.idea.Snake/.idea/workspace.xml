@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fc5e12f9-6dcb-46ec-a073-a6ffd09b7fd8" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Snake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BulletPro/Core/Resources/BulletProSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BulletPro/Core/Resources/BulletProSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_世界旋转型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_世界旋转型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_分叉型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_分叉型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_发停发型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_发停发型.asset" afterDir="false" />
@@ -16,62 +15,24 @@
       <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_游走型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_游走型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_直飞型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_直飞型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_缺口型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_缺口型.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_追踪型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_追踪型.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_逐个出现型.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Base_逐个出现型.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_0 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_0 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_0 2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_0 2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_0.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_0.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_1 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_1 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_1 2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_1 2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_1 3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_1 3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_1 4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_1 4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/L0_1_1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/Laser_Level_0_1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/Laser_Level_0_1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/Laser_Level_0_2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Laser/Laser_Level_0_2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_0.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_0.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_0/BU_LR_.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/Level_0/BU_LR_.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_0/Base_逐个出现型_BU.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_0/Base_逐个出现型_BU.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_0/LaserTrigger_Bullet.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_0/LaserTrigger_Bullet.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_0/LaserTrigger_Bullet.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_0/LaserTrigger_Bullet.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_0/Level_0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/Level_0/Level_0.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_1.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_1.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Material/NewLaser.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Material/NewLaser.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-1-1S.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-1-1S.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-1-2S.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-1-2S.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-1-3S.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-1-3S.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-1-F.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-1-F.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-1-F.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-1-F.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-2-1S.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-2-1S.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-2-2S.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-2-2S.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-2-3S.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-2-3S.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-2-F.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-2-F.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-3-1S.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-3-1S.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-3-2S.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-3-2S.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-3-3S.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-3-3S.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-3-F.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-3-F.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-4-1S.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-4-1S.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-4-2S.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-4-2S.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-4-3S.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-4-3S.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-4-F.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Art/Picture/Bricks/1-4-F.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Prefabs/Laser/Laser 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Prefabs/Laser/Laser 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Prefabs/Snake/Core.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Prefabs/Snake/Core.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Death.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/Death.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/TB_Snake.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/TB_Snake.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/TL_BU_D_3_Split4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/TL_BU_D_3_Split4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/TL_BU_D_5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/TL_BU_D_5.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/TL_DNAShot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/TL_DNAShot.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/TR_UB_D_5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/TR_UB_D_5.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/废弃Base_弹跳型 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/EmitterProfile/废弃Base_弹跳型 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/HOME.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/HOME.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_0/Stage_1/0_1Stage.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/Level_0/Stage_1/0_1Stage.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_0/Stage_2/0_2Stage.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/Level_0/Stage_2/0_2Stage.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_1/1_Constant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/Level_1/1_Constant.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_1/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/Level_1/Level_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_1/Stage_1/1_1Stage.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/Level_1/Stage_1/1_1Stage.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFlow/Level_1/Stage_2/1_2Stage.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFlow/Level_1/Stage_2/1_2Stage.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Scripts/LevelEmitterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Scripts/LevelEmitterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,26 +51,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Dev&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CodeLensConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Level__1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CodeLensConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Demineer\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Demineer\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Demineer\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Demineer\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Demineer\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Demineer\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="附加到 Unity 编辑器.附加到 Unity 编辑器">
     <configuration name="启动 Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="A:\Unity 2022.3.0f1\Editor\Unity.exe" />
@@ -160,6 +121,7 @@
       <workItem from="1717232643769" duration="5609000" />
       <workItem from="1717480689203" duration="6168000" />
       <workItem from="1717532781942" duration="1341000" />
+      <workItem from="1717565072623" duration="1343000" />
     </task>
     <servers />
   </component>

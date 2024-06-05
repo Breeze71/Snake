@@ -37,7 +37,7 @@ public class LevelEmitterController : MonoBehaviour
     {
         if (_nowStage == 0)
         {
-            foreach (var singleEmitter in StageConfigurations[_nowStage].SingleEmitters)
+            foreach (var singleEmitter in StageConfigurations[StageConfigurations.Count-1].SingleEmitters)
             {
                 singleEmitter.BulletEmitter.Kill();
             }
@@ -60,6 +60,7 @@ public class LevelEmitterController : MonoBehaviour
     }
     public void ChangeToStage(int num)
     {
+        Debug.Log(num+"   "+StageConfigurations.Count);
         ClosePreviousEmitters();
         _nowStage = num;
         SwitchNextStage(num);
