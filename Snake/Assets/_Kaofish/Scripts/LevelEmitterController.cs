@@ -32,12 +32,19 @@ public class LevelEmitterController : MonoBehaviour
 {
     private bool _ifFirst = true;
     public List<StageConfiguration> StageConfigurations=new List<StageConfiguration>();
-    private int _nowStage = 0;
+    private int _nowStage = -1;
     private void ClosePreviousEmitters()
     {
         if (_nowStage == 0)
         {
             foreach (var singleEmitter in StageConfigurations[StageConfigurations.Count-1].SingleEmitters)
+            {
+                singleEmitter.BulletEmitter.Kill();
+            }
+        }
+        else if(_nowStage == -1)
+        {
+            foreach (var singleEmitter in StageConfigurations[0].SingleEmitters)
             {
                 singleEmitter.BulletEmitter.Kill();
             }
@@ -60,6 +67,16 @@ public class LevelEmitterController : MonoBehaviour
     }
     public void ChangeToStage(int num)
     {
+        if (_nowStage != num)
+        {
+            Debug.Log(num+"   "+StageConfigurations.Count);
+            ClosePreviousEmitters();
+            _nowStage = num;
+            SwitchNextStage(num);
+        }
+    }
+    public void ChangeToStage(int num,bool ifEditor)
+    {
         Debug.Log(num+"   "+StageConfigurations.Count);
         ClosePreviousEmitters();
         _nowStage = num;
@@ -71,17 +88,17 @@ public class LevelEmitterController : MonoBehaviour
         if (_ifFirst)
         {
             _ifFirst = false;
-            ChangeToStage(0);
+            ChangeToStage(0,true);
         }
         else if (_nowStage + 1 < StageConfigurations.Count)
         {
             _nowStage += 1;
-            ChangeToStage(_nowStage);
+            ChangeToStage(_nowStage,true);
         }
         else
         {
             _nowStage = 0;
-            ChangeToStage(0);
+            ChangeToStage(0,true);
         }
     }
 }

@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fc5e12f9-6dcb-46ec-a073-a6ffd09b7fd8" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Snake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Snake/Scripts/UI/PlayerHealthUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Snake/Scripts/UI/PlayerHealthUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Kaofish/Scripts/LevelEmitterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Kaofish/Scripts/LevelEmitterController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +97,7 @@
       <workItem from="1717532781942" duration="1341000" />
       <workItem from="1717565072623" duration="1343000" />
       <workItem from="1717572630675" duration="4971000" />
+      <workItem from="1717648319486" duration="305000" />
     </task>
     <servers />
   </component>
